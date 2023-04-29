@@ -1,18 +1,89 @@
-.avatar-container .Player-username {
-    font-size: 2em;
+.ratings-row {
+  display:none !important;
+}
+.container {
+  max-width: none !important;
+  background-image: url('https://cdn.discordapp.com/attachments/1090641433330995282/1090643153398288455/ALL-1.jpg');
+}
+h1 {
+ color:#FF0000;
 }
 
-.container {
-    max-width: none !important;
-    /* background-color: #21222c; */
-    
-    /* Images */
-    
-    /* Joaninha                           |    background-image: url('https://th.bing.com/th/id/R.bb706bb60429976e9c2f2615574f14b7?rik=p0SKWNbaGfT1qQ&pid=ImgRaw&r=0'); */
-    /* psychedelic desert                 |    background-image: url('https://i.imgur.com/cyHhCdz.png'); */
-    /* pink dracula castle                |    background-image: url('https://media4.giphy.com/media/eJoGJF8lASakPof1h2/giphy.gif?cid=790b76113b8c6801806a5cbc6c1f2fbf2112fde8d1f5bb95&rid=giphy.gif'); */
-    /* plage gif                          |    background-image: url('https://i.pinimg.com/originals/9d/3a/41/9d3a41e1e7e6dcf1d4bd2fcbc56779e7.gif'); */
-    /* embarrassment is the cost of entry |    background-image: url('https://i.imgur.com/0NTaxZn.jpeg'); */
-    /* black and white mountain top       |    background-image: url('https://wallpaperaccess.com/full/2109.jpg'); */
-    /* bluish purple sabaki theme         | */ background-image: url('https://raw.githubusercontent.com/FanaroEngineering/fanaro_sabaki_theme_collection/master/screenshots/bluish_purple.png');
+h2 {
+ color:#228B22;
+}
+
+h3 {
+   color: #228B22;
+  }
+
+h4{
+   color:  #228B22 ;
+}
+
+
+.ratings-container{
+	background-color:#FFB6C1;
+	 border:solid
+	 border-color: #8f00ff;
+		 ridge #8f00ff;
+}
+
+.rating-entry{
+  color: #FF0000;
+}
+
+.avatar-container .Player-username {
+    color: #FF0000;
+}
+
+.active-games{
+	background-color:#FFB6C1;
+	 border:solid
+	 border-color: #8f00ff;
+		 ridge #8f00ff;
+}
+
+.move-number{
+  color: #FF0000;
+}
+
+.game-name{
+  color: #FF0000;
+}
+
+.Clock {
+  color: #FF0000;
+}
+
+.size {
+  color: #FF0000;
+}
+
+.Player-username {
+  color: #FF0000;
+}
+
+.Player-rank {
+  color: #FF0000;
+}
+
+.game_name {
+  color: #FF0000;
+}
+
+.board_size {
+  color: #FF0000;
+}
+
+.date {
+  color: #FF0000;
+}
+
+.user_info {
+  color: #FF0000;
+}
+
+.sortable {
+  color: #228B22;
 }
