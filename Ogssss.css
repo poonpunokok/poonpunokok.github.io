@@ -1,0 +1,153 @@
+.avatar-container .Player-username {
+    font-size: 1em;
+}
+.container {
+  max-width: none !important;
+  background-image: url('https://cdn.discordapp.com/attachments/1090641433330995282/1090643154727866519/LOGO_BG-1.jpg');
+}
+h.ratings-container{
+	background-color:#282828;
+	border: solid;
+	border-color: #606060;
+	border-width: 0.5px;
+}
+/*library results
+.library-won-result-vs-stronger{  background-color: RGBA( 255, 182, 193, 1 ) !important; color:black !important;}
+.library-won-result-vs-weaker{  background-color: RGBA( 255, 160, 122, 1 ) !important; color:black !important;}
+.library-lost-result-vs-weaker {  background-color: RGBA( 32, 178, 170, 1 ) !important; color:black !important;}
+.library-lost-result-vs-stronger{  background-color: RGBA( 135, 206, 250, 1 ) !important; color:black !important;} */
+
+/* the game history table*/
+
+/* .library-lost-result-unranked {  color: RGBA( 255, 182, 193, 1 ) !important;} 
+.library-won-result-unranked { color: RGBA( 32, 178, 170, 1 ) !important;} */
+
+/*pie chart
+.strong-wins
+.strong-losses {   fill:rgba(104, 118, 243, 0.685) !important;}
+.weak-wins
+.weak-losses*/
+
+/*fonts and colors*/
+ 
+h2 {
+	font-family: "Baloo 2"
+        /* color:RGBA(255, 204, 102); */
+} 
+
+h3 {
+   color: rgb(255, 204, 102);
+   font-family: "Baloo 2"
+  } 
+
+h4{
+   color: rgb(255, 204, 102);
+   font-family: "Baloo 2"
+}
+
+.camille {
+     /*font-family: "Book Antiqua", serif;
+     color:RGBA( 0, 128, 128, 1 );*/
+	RGBA(255, 204, 102);
+	font-family: "Baloo 2"
+	position: static;
+	left:0;
+}
+
+p {
+  color: rgba(255, 204, 102);
+   font-family: "Baloo 2"
+}
+
+/*IMAGES AND SHAPING*/	
+
+span.test{
+  display: inline-block;
+  padding: 0 10% ;
+  color: rgba(255, 204, 102);
+}
+
+.image {
+width: 20%;
+border-radius: 20px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.images {
+ width: 7%;
+margin-left: auto;
+margin-right: auto;
+border-radius: 40px;
+}
+
+/*ANIMATION*/
+
+.about-container h1 {
+    color:rgba(237, 247, 242);
+	/*color:RGBA( 0, 206, 209, 1 );*/
+   font-family: "Baloo 2"
+    /* font-size: 3em;
+    position: absolute;
+    width: 100%;
+    height: 100%; */
+	
+    /* Starting position 
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%); 
+    Apply animation to this element 	
+    -moz-animation: scrolling 15s linear infinite;
+    -webkit-animation: scrolling 15s linear infinite;
+    animation: scrolling 15s linear infinite; */
+}
+
+
+/* Move it (define the animation) */
+@-moz-keyframes scrolling {
+    0%   { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scrolling {
+    0%   { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scrolling {
+     0%   { 
+        -moz-transform: translateX(100%); /* Firefox bug fix */
+        -webkit-transform: translateX(100%); /* Firefox bug fix */
+        transform: translateX(100%); 		
+    }
+    100% { 
+        -moz-transform: translateX(-100%); /* Firefox bug fix */
+        -webkit-transform: translateX(-100%); /* Firefox bug fix */
+        transform: translateX(-100%); 
+    }
+}
+
+
+/* rainbow flashing text */
+h1, h2, h3 {
+    animation:rainbowText 2s infinite;
+}
+@keyframes rainbowText{
+    0%   {  color: #FF0900; }
+    17%  {  color: #FF7F00; }
+    33%  {  color: #FFEF00; }
+    50%  {  color: #00F11D; }
+    67%  {  color: #0079FF; }
+    83%  {  color: #A800FF; }
+    100% {  color: #FF0900; }
+}
+
+
+/* .about-container h3 {
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%   {  opacity: 1; }
+    49%  {  opacity: 1; }
+    60%  {  opacity: 0; }
+    99%  {  opacity: 0; }
+    100% {  opacity: 1; }
+} */
