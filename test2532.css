@@ -3,7 +3,7 @@
 }
 .container {
   max-width: none !important;
-  background-image: url('https://cdn.discordapp.com/attachments/880712138883227688/1102159937938915369/image.png');
+  background-image: url('https://cdn.discordapp.com/attachments/1054341130508054539/1101841992469717062/image.png');
 }
 
 .avatar-container .Player-username {
@@ -34,8 +34,12 @@ h4{
   color: #FF0000;
 }
 
+.User .ratings-grid .rating-entry.unset, body.dark .User .ratings-grid .rating-entry.unset {
+    color: #FF0000;
+}
+
 .active-games{
-		 color: #FF0000;
+  color: #FF0000;
 }
 
 .move-number{
