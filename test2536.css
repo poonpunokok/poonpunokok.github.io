@@ -29,16 +29,26 @@ h3 {
 h4{
    color:#FF0000 ;
 }
+.ratings-container{
+	background-color:#000000;
+	 border:solid
+	 border-color: #000000;
+		 ridge #000000;
+}
+
 .rating-entry{
   color: #FF0000;
 }
 
-.User .ratings-grid .rating-entry.unset, body.dark .User .ratings-grid .rating-entry.unset {
+.avatar-container .Player-username {
     color: #FF0000;
 }
 
 .active-games{
-  color: #FF0000;
+	background-color:#000000;
+	 border:solid
+	 border-color: #000000;
+		 ridge ##000000;
 }
 
 .move-number{
@@ -83,8 +93,4 @@ h4{
 
 .sortable {
   color: #FF0000;
-}
-
-.MiniGoban {
-    color: #FF0000;
 }
