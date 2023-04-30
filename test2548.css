@@ -6,6 +6,10 @@
   background-image: url('https://cdn.discordapp.com/attachments/1054341130508054539/1101841992469717062/image.png');
 }
 
+.col-sm-12 { display: none !important; }
+
+.col-sm-4 { display: none !important; }
+
 .avatar-container .Player-username {
   color: #d78cdb;
 }
@@ -81,5 +85,3 @@ h4 {
 .Player-rank {
     color: #FF0000;
 }
-
-.col-sm-12 { display: none !important; }
