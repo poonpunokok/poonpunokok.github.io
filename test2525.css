@@ -31,7 +31,11 @@ h4{
 }
 
 .avatar-container .Player-username {
-    color: #FF0000;
+    color: #d78cdb;
+}
+
+.avatar-container .Player-rank {
+    color: #d78cdb;
 }
 
 .active-games{
@@ -55,7 +59,7 @@ h4{
 }
 
 .Player-username {
-  color: #d78cdb;
+  color: #FF0000;
 }
 
 .Player-rank {
