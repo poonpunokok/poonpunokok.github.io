@@ -18,12 +18,12 @@ h3 {
   }
 
 h4{
-   color:  #ff0000 ;
+   color: #FF0000;
 }
 
 
 .ratings-container{
-	color: #FF0000;
+  color: #FF0000;
 }
 
 .rating-entry{
@@ -31,7 +31,7 @@ h4{
 }
 
 .avatar-container .Player-username {
-    color: #d78cdb;
+  color: #FF0000;
 }
 
 .avatar-container .Player-rank {
@@ -39,7 +39,7 @@ h4{
 }
 
 .active-games{
-	color: #FF0000;
+  color: #FF0000;
 }
 
 .move-number{
