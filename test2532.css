@@ -3,8 +3,17 @@
 }
 .container {
   max-width: none !important;
-  background-image: url('https://cdn.discordapp.com/attachments/880712138883227688/1102156339582611508/snowfall-6786475_960_720.webp');
+  background-image: url('https://cdn.discordapp.com/attachments/880712138883227688/1102159937938915369/image.png');
 }
+
+.avatar-container .Player-username {
+  color: #d78cdb;
+}
+
+.avatar-container .Player-rank {
+    color: #d78cdb;
+}
+
 h1 {
  color:#FF0000;
 }
@@ -18,23 +27,15 @@ h3 {
   }
 
 h4{
-   color: #FF0000;
+   color:  #FF0000 ;
 }
 
-.rating-entry {
-    color: #FF0000;
-}
-
-.avatar-container .Player-username {
-  color: #d78cdb;
-}
-
-.avatar-container .Player-rank {
-    color: #d78cdb;
+.rating-entry{
+  color: #FF0000;
 }
 
 .active-games{
-  color: #FF0000;
+		 color: #FF0000;
 }
 
 .move-number{
@@ -79,4 +80,8 @@ h4{
 
 .sortable {
   color: #FF0000;
+}
+
+.MiniGoban {
+    color: #FF0000;
 }
