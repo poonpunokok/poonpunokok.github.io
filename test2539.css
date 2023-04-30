@@ -70,10 +70,14 @@ h4 {
     color: #FF0000;
 }
 
-#main-content {
+.main-content {
     color: #ffa124;
 }
 
-.fa-users {
+.Clock .main-time {
+    color: #FF0000;
+}
+
+.Player-rank {
     color: #FF0000;
 }
