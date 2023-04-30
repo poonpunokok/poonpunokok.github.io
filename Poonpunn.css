@@ -1,0 +1,9 @@
+.avatar-container .Player-username {
+     0%   {  color: #FF0900; }
+    17%  {  color: #FF7F00; }
+    33%  {  color: #FFEF00; }
+    50%  {  color: #00F11D; }
+    67%  {  color: #0079FF; }
+    83%  {  color: #A800FF; }
+    100% {  color: #FF0900; };
+}
