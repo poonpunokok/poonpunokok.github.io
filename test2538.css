@@ -1,0 +1,79 @@
+.ratings-row {
+  display:none !important;
+}
+.container {
+  max-width: none !important;
+  background-image: url('https://cdn.discordapp.com/attachments/1054341130508054539/1101841992469717062/image.png');
+}
+
+.avatar-container .Player-username {
+  color: #d78cdb;
+}
+
+.avatar-container .Player-rank {
+  color: #d78cdb;
+}
+
+.User .ratings-title {
+    color: #FF0000;
+}
+
+h1 {
+   color: #FF0000;
+  }
+
+h2 {
+    color: #FF0000;
+}
+
+h3 {
+   color: #FF0000;
+  }
+
+h4 {
+   color: #FF0000;
+  }
+
+.MiniGoban .player-name {
+    color: #FF0000;
+}
+
+.MiniGoban .player-rank {
+    color: #FF0000;
+}
+
+.MiniGoban .title-black .score {
+    color: #FF0000;
+}
+
+.MiniGoban .title-white .score {
+    color: #FF0000;
+}
+
+.user_info {
+    color: #FF0000;
+}
+
+.date {
+    color: #FF0000;
+}
+
+.Player-username {
+    color: #FF0000;
+}
+
+.board_size {
+    color: #FF0000;
+}
+
+.game_name {
+    color: #FF0000;
+}
+
+#main-content {
+    color: #ffa124;
+}
+
+.fa-users {
+    color: #FF0000;
+}
