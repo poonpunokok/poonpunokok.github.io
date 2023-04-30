@@ -81,11 +81,3 @@ h4 {
 .Player-rank {
     color: #FF0000;
 }
-
-.PaginatedTable.game-history-table.clickable-rows{
-	background-image: url('https://i.imgur.com/xnZLmtX.jpg');
-	background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(0,0,0,0);
-}
