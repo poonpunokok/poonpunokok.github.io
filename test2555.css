@@ -42,21 +42,17 @@ h4 {
 
 .MiniGoban .player-rank {
     color: #FF0000;
-
 }
 
 .MiniGoban .title-black .score {
-
     color: #FF0000;
-
 }
 
 .MiniGoban .title-white .score {
-
     color: #FF0000;
 }
 
-.user_info 
+.user_info {
     color: #FF0000;
 }
 
