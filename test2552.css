@@ -6,13 +6,10 @@
   background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1');
 }
 
-.col-sm-12 { display: none !important; }
-
-.col-sm-4 { display: none !important; }
 
 .avatar-container .Player-username {
   color: #d78cdb;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 .avatar-container .Player-rank {
@@ -21,7 +18,7 @@
 
 .User .ratings-title {
     color: #FF0000;
-}
+
 
 h1 {
    color: #FF0000;
