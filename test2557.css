@@ -18,7 +18,7 @@ color: #d78cdb;
 
 .User .ratings-title {
 color: #FF0000;
-font-size: 2em;
+font-size: 0.8em;
 }
 
 h1 {
@@ -27,17 +27,17 @@ h1 {
 
 h2 {
     color: #FF0000;
-    font-size: 2em;
+    font-size: 0.8em;
 }
 
 h3 {
    color: #FF0000;
-   font-size: 2em;  
+   font-size: 0.8em;  
 }
 
 h4 {
    color: #FF0000;
-   font-size: 2em;  
+   font-size: 0.8em;  
 }
 
 .MiniGoban .player-name {
@@ -90,11 +90,3 @@ h4 {
 }
 
 body { text-align: center;}
-
-header.NavBar a {
-    color: #FF0000;
-}
-
-header.NavBar .Menu-title{
-    color: #FF0000;
-}
