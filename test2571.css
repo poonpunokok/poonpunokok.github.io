@@ -10,7 +10,7 @@ background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11
 .avatar-container .Player-username {
 color: #d78cdb;
 font-size: 1.5em;
-font-family:'Cooper Black';  
+font-family:'Goudy Stout';  
 }
 
 .avatar-container .Player-rank {
@@ -28,27 +28,27 @@ color: #FF0000;
 
 h1 {
    color: #FF0000;
-    font-family:'Cooper Black'; 
+font-family:'Goudy Stout';
   }
 
 h2 {
     color: #FF0000;
-    font-family:'Cooper Black';  
+font-family:'Goudy Stout';  
 }
 
 h3 {
    color: #FF0000;
-    font-family:'Cooper Black'; 
+font-family:'Goudy Stout';
 }
 
 h4 {
    color: #FF0000;
-    font-family:'Cooper Black'; 
+font-family:'Goudy Stout';
 }
 
 .MiniGoban .player-name {
     color: #FF0000;
-   font-family:'Arial Black'; 
+font-family:'Goudy Stout';
 }
 
 .MiniGoban .player-rank {
@@ -73,7 +73,7 @@ h4 {
 
 .Player-username {
     color: #FF0000;
-    font-family:'Cooper Black'; 
+font-family:'Goudy Stout';
 }
 
 .board_size {
@@ -82,7 +82,7 @@ h4 {
 
 .game_name {
     color: #FF0000;
-    font-family:'Cooper Black'; 
+font-family:'Goudy Stout';
 }
 
 .main-content {
