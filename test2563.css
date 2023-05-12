@@ -20,6 +20,10 @@ color: #d78cdb;
 color: #FF0000;
 }
 
+body.dark .TurnIndicator .count {
+color: #FF0000;
+}
+
 h1 {
    color: #FF0000;
   }
