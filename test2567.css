@@ -28,22 +28,27 @@ color: #FF0000;
 
 h1 {
    color: #FF0000;
+   font-family:'Prompt', sans-serif; 
   }
 
 h2 {
-    color: #FF0000
+    color: #FF0000;
+   font-family:'Prompt', sans-serif; 
 }
 
 h3 {
-   color: #FF0000; 
+   color: #FF0000;
+   font-family:'Prompt', sans-serif;  
 }
 
 h4 {
    color: #FF0000;
+   font-family:'Prompt', sans-serif; 
 }
 
 .MiniGoban .player-name {
     color: #FF0000;
+   font-family:'Prompt', sans-serif; 
 }
 
 .MiniGoban .player-rank {
@@ -60,7 +65,7 @@ h4 {
 
 .user_info {
     color: #FF0000;
-font-family:'Prompt', sans-serif;
+   font-family:'Prompt', sans-serif; 
 }
 
 .date {
@@ -69,7 +74,7 @@ font-family:'Prompt', sans-serif;
 
 .Player-username {
     color: #FF0000;
-font-family:'Prompt', sans-serif;
+   font-family:'Prompt', sans-serif; 
 }
 
 .board_size {
