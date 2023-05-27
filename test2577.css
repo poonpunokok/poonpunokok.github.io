@@ -10,7 +10,7 @@ background-image: url('https://raw.githubusercontent.com/FanaroEngineering/fanar
 .avatar-container .Player-username {
 color: #d78cdb;
 font-size: 1.5em;
-font-family:'Star Strella';  
+font-family:'Bradley Hand ITC';  
 }
 
 .avatar-container .Player-rank {
@@ -28,27 +28,27 @@ color: #FF0000;
 
 h1 {
    color: #FF0000;
-font-family:'Star Strella';
+font-family:'Bradley Hand ITC';
   }
 
 h2 {
     color: #FF0000;
-font-family:'Star Strella'; 
+font-family:'Bradley Hand ITC'; 
 }
 
 h3 {
    color: #FF0000;
-   font-family:'Star Strella';
+   font-family:'Bradley Hand ITC';
 }
 
 h4 {
    color: #FF0000;
-font-family:'Star Strella';
+font-family:'Bradley Hand ITC';
 }
 
 .MiniGoban .player-name {
     color: #FF0000;
-font-family:'Star Strella';
+font-family:'Bradley Hand ITC';
 }
 
 .MiniGoban .player-rank {
@@ -73,7 +73,7 @@ font-family:'Star Strella';
 
 .Player-username {
     color: #FF0000;
-font-family:'Star Strella';
+font-family:'Bradley Hand ITC';
 }
 
 .board_size {
@@ -82,7 +82,7 @@ font-family:'Star Strella';
 
 .game_name {
     color: #FF0000;
-font-family:'Star Strella';
+font-family:'Bradley Hand ITC';
 }
 
 .main-content {
