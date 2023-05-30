@@ -103,9 +103,9 @@ font-family:'Bradley Hand ITC';
 
 .about-container h1 {
 
-    color:rgba(247, 163, 38, 0.89);
+    color:red
 
-	/*color:RGBA( 0, 206, 209, 1 );*/   font-family: "Lucida Handwriting", cursive; 
+	/*color:RED;*/   font-family: "Bradley Hand ITC", cursive; 
 
     font-size: 3em;
 
