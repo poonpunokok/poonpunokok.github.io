@@ -245,3 +245,29 @@ a[href="/leaderboards"] {
     display: none !important;
 
 }
+
+/* IMAGE */
+
+.image {
+
+width: 20%;
+
+border-radius: 20px;
+
+margin-left: auto;
+
+margin-right: auto;
+
+}
+
+.images {
+
+ width: 7%;
+
+margin-left: auto;
+
+margin-right: auto;
+
+border-radius: 40px;
+
+}
