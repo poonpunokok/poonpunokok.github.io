@@ -22,8 +22,6 @@ font-family:'Lucida Handwriting';
 
 .avatar-container .Player-rank {
 
-color: #d78cdb;
-
 font-size: 2.5em;
 
 }
@@ -121,7 +119,7 @@ font-family:'Lucida Handwriting';
 }
 
 /* rainbow flashing text */
-Player-user​name, h1, h2, h3 {
+Player-user​name, Player-rank, h1, h2, h3 {
     animation:rainbowText 2s infinite;
 }
 @keyframes rainbowText{
@@ -135,7 +133,47 @@ Player-user​name, h1, h2, h3 {
 }
 
 
-/* .about-container h3 {
+/* .about-container Player-user​name​ {
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%   {  opacity: 1; }
+    49%  {  opacity: 1; }
+    60%  {  opacity: 0; }
+    99%  {  opacity: 0; }
+    100% {  opacity: 1; }
+}
+.about-container Player-rank {
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%   {  opacity: 1; }
+    49%  {  opacity: 1; }
+    60%  {  opacity: 0; }
+    99%  {  opacity: 0; }
+    100% {  opacity: 1; }
+}
+.about-container h1 {
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%   {  opacity: 1; }
+    49%  {  opacity: 1; }
+    60%  {  opacity: 0; }
+    99%  {  opacity: 0; }
+    100% {  opacity: 1; }
+}
+.about-container h2 {
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%   {  opacity: 1; }
+    49%  {  opacity: 1; }
+    60%  {  opacity: 0; }
+    99%  {  opacity: 0; }
+    100% {  opacity: 1; }
+}
+.about-container h3 {
     animation:blinkingText 1.5s infinite;
 }
 @keyframes blinkingText{
