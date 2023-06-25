@@ -14,8 +14,6 @@ background-image: url('https://raw.githubusercontent.com/FanaroEngineering/fanar
 
 .avatar-container .Player-username {
 
-color: #d78cdb;
-
 font-size: 1.5em;
 
 font-family:'Lucida Handwriting';  
@@ -123,7 +121,7 @@ font-family:'Lucida Handwriting';
 }
 
 /* rainbow flashing text */
-h1, h2, h3 {
+Player-user​name, h1, h2, h3 {
     animation:rainbowText 2s infinite;
 }
 @keyframes rainbowText{
