@@ -1,0 +1,57 @@
+.ratings-row {
+
+  display:none !important;
+
+}
+
+.container {
+
+  max-width: none !important;
+
+background-image: url('https://raw.githubusercontent.com/FanaroEngineering/fanaro_sabaki_theme_collection/master/screenshots/bluish_purple.png');
+
+}
+
+.avatar-container .Player-username {
+
+font-size: 1.5em;
+
+font-family:'papyrus'​;  
+
+color: #FF0000;​
+
+}
+
+.avatar-container .Player-rank {
+
+font-size: 2.5em;
+
+Color​: #FF0000​;
+
+}​
+
+/* IMAGE */
+
+.image {
+
+width: 20%;
+
+border-radius: 20px;
+
+margin-left: auto;
+
+margin-right: auto;
+
+}
+
+.images {
+
+ width: 7%;
+
+margin-left: auto;
+
+margin-right: auto;
+
+border-radius: 40px;
+
+}
