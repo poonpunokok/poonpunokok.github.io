@@ -15,14 +15,14 @@ background-image: url('https://raw.githubusercontent.com/FanaroEngineering/fanar
 .avatar-container .Player-username {
 
 font-size: 1.5em;
- 
+
+font-family: "Comic Sans MS", cursive, serif;
+
 color: #FF0000;​
 
 }
 
-.Player .Player-rank {
-
-font-size: 1.5em;
+.avatar-container .Player .Player-rank {
 
 Color​: #FF0000​;
 
@@ -30,26 +30,26 @@ Color​: #FF0000​;
 
 h1 {
   
-  font-size: 1.5em;
+  font-size: 2em;
   
 } 
 
 h2 { 
-  
-  font-size: 1.5em;
+
+  font-size: 2em;
   
 } 
 
 
 h3 {
-  ​
-  font-size: 1.5em;
+
+  font-size: 2em;
 
 }  
 
 h4 {
-  ​
-  font-size: 1.5em;
+
+  font-size: 2em;
 
 }  
 
