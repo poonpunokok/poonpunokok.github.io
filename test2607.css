@@ -1,0 +1,30 @@
+body {
+    text-align: center;
+}
+
+.container {
+    max-width: none !important;
+    background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1'); !important;
+}
+
+.avatar-container .Player-username {
+    font-size: 2em;
+    color: #FFAFB0;
+}
+
+.avatar-container .Player .Player-rank {
+    color: #FFAFB0;
+}
+
+h1, h2, h3 {
+    animation:rainbowText 2s infinite;
+}
+@keyframes rainbowText{
+    0%   {  color: #FF0900; }
+    17%  {  color: #FF7F00; }
+    33%  {  color: #FFEF00; }
+    50%  {  color: #00F11D; }
+    67%  {  color: #0079FF; }
+    83%  {  color: #A800FF; }
+    100% {  color: #FF0900; }
+}
