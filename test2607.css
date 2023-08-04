@@ -16,6 +16,30 @@ body {
     color: #FFAFB0;
 }
 
+span.playery-name{
+    font-size: 2em;
+    color: #FFAFB0;
+}
+
+span.player-rank{
+    font-size: 2em;
+    color: #FFAFB0;
+}s
+
+span.score{
+    font-size: 2em;
+    color: #FFAFB0;
+}
+
+span.Clock.black.mini-goban, span.Clock.white.mini-goban{
+    font-size: 2em;
+    color: #FFAFB0;
+}
+
+h2, h3 {
+    font-size: 2em;
+}
+
 h1, h2, h3 {
     animation:rainbowText 2s infinite;
 }
@@ -28,3 +52,4 @@ h1, h2, h3 {
     83%  {  color: #A800FF; }
     100% {  color: #FF0900; }
 }
+
