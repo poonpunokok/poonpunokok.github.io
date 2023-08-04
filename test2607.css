@@ -1,6 +1,6 @@
 body {
     text-align: center;
-}
+}   
 
 .container {
     max-width: none !important;
@@ -24,7 +24,7 @@ span.playery-name{
 span.player-rank{
     font-size: 2em;
     color: #FFAFB0;
-}s
+}
 
 span.score{
     font-size: 2em;
@@ -36,11 +36,8 @@ span.Clock.black.mini-goban, span.Clock.white.mini-goban{
     color: #FFAFB0;
 }
 
-h2, h3 {
-    font-size: 2em;
-}
-
 h1, h2, h3 {
+    font-size: 2em;
     animation:rainbowText 2s infinite;
 }
 @keyframes rainbowText{
