@@ -16,20 +16,19 @@ body {
     color: #FFAFB0;
 }
 
-.MiniGoban {
+span.player-name {
     color: #FFAFB0;
 }
 
-span.player-rank{
+span.player-rank {
     color: #FFAFB0;
 }
 
-span.score{
+span.Clock.black.mini-goban, span.Clock.white.mini-goban {
     color: #FFAFB0;
 }
 
-span.Clock.black.mini-goban, span.Clock.white.mini-goban{
-    font-size: 2em;
+span.score {
     color: #FFAFB0;
 }
 
@@ -46,4 +45,3 @@ h1, h2, h3 {
     83%  {  color: #A800FF; }
     100% {  color: #FF0900; }
 }
-
