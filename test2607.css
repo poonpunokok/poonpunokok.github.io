@@ -13,6 +13,7 @@ body {
 }
 
 .avatar-container .Player .Player-rank {
+    font-size: 2em;
     color: #FFAFB0;
 }
 
