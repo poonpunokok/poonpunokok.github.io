@@ -7,23 +7,15 @@ body {
     background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1'); !important;
 }
 
-.avatar-container .Player-username {
-    font-size: 2em;
+.avatar-container .Player-username, .avatar-container .Player .Player-rank {
+    font-size: 1.8em;
     color: #FFAFB0;
 }
 
-.avatar-container .Player .Player-rank {
-    font-size: 2em;
+span.player-name, span.player-rank {
     color: #FFAFB0;
-}
+}​
 
-span.player-name {
-    color: #FFAFB0;
-}
-
-span.player-rank {
-    color: #FFAFB0;
-}
 
 span.Clock.black.mini-goban, span.Clock.white.mini-goban {
     color: #FFAFB0;
