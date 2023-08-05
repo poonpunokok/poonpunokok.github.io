@@ -1,5 +1,4 @@
 body {
-    font-family: Cursive, 
     text-align: center;
 }   
 
@@ -9,12 +8,12 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    font-family: Cursive, 
+    font-family: "papyrus", fantasy; 
     color: #FFAFB0;
 }
 
 span.player-name, span.player-rank {
-    font-family: Cursive, 
+    font-family: "papyrus", fantasy;
     color: #FFAFB0;
 }​
 
@@ -28,7 +27,7 @@ span.score {
 }
 
 h1, h2, h3 {
-    font-family: Cursive, 
+    font-family: "papyrus", fantasy;
     font-size: 2em;
     animation:rainbowText 2s infinite;
 }
