@@ -19,9 +19,7 @@ span.player-name, span.player-rank {
 }​
 
 
-span.Clock.black.mini-goban, span.Clock.white.mini-goban {
-    color: #FFAFB0;
-}
+
 
 span.score {
     color: #FFAFB0;
