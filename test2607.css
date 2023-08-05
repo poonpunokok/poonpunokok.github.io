@@ -8,7 +8,6 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    font-size: 1.5em;
     color: #FFAFB0;
 }
 
