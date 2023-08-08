@@ -42,6 +42,7 @@ h2, h3 {
 }
 
 .about-container h1 {
+    color: #FFAFB0;
     font-size: 2em;
     position: absolute;
     width: 100%;
@@ -75,4 +76,9 @@ h2, h3 {
         -webkit-transform: translateX(-100%); /* Firefox bug fix */
         transform: translateX(-100%); 
     }
+}
+
+/* clean up the menu */
+a[href="/leaderboards"] {
+    display: none !important;
 }
