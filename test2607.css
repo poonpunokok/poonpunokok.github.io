@@ -26,7 +26,7 @@ span.score {
     color: #FFAFB0;
 }
 
-h1, h2, h3 {
+h2, h3 {
     font-family: "papyrus", fantasy;
     font-size: 2em;
     animation:rainbowText 2s infinite;
