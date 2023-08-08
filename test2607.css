@@ -26,9 +26,8 @@ span.score {
     color: #FFAFB0;
 }
 
+
 h2, h3 {
-    font-family: "papyrus", fantasy;
-    font-size: 2em;
     animation:rainbowText 2s infinite;
 }
 @keyframes rainbowText{
@@ -41,9 +40,13 @@ h2, h3 {
     100% {  color: #FF0900; }
 }
 
+.about-container {
+    overflow: hidden;
+    position: relative;
+}
 .about-container h1 {
     color: #FFAFB0;
-    font-size: 2em;
+    font-size: 3em;
     position: absolute;
     width: 100%;
     height: 100%;
