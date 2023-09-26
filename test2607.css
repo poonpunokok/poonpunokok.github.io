@@ -30,6 +30,7 @@ h1, h2, h3 {
     color: #FFAFB0;
 }
 
+/*IMAGES/*
 .image {
 width: 20%;
 border-radius: 20px;
@@ -43,6 +44,16 @@ margin-left: auto;
 margin-right: auto;
 border-radius: 40px;
 }
+
+/*library results*/
+.library-won-result-vs-stronger{  background-color: RGBA( 255, 239, 219 ) !important; color:black !important;}
+.library-won-result-vs-weaker{  background-color: RGBA( 238, 223, 204 ) !important; color:black !important;}
+.library-lost-result-vs-weaker {  background-color: RGBA( 205, 192, 176 ) !important; color:black !important;}
+.library-lost-result-vs-stronger{  background-color: RGBA( 255, 228, 196 ) !important; color:black !important;}
+
+/* the game history table*/
+.library-lost-result-unranked {  color: RGBA( 238, 213, 183 ) !important;}
+.library-won-result-unranked { color: RGBA( 205, 183, 158	 ) !important;}
 
 clean up the menu 
 a[href="/leaderboards"] {
