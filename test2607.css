@@ -64,7 +64,11 @@ border-radius: 40px;
 	display: none !important;
 }
 
-.divrating{
+.spanleft{
+	display: none !important;
+}
+
+.spanright{
 	display: none !important;
 }
 
