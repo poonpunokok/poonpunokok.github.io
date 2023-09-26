@@ -29,10 +29,6 @@ span.score {
 h1, h2, h3 {
     color: #FFAFB0;
 }
-.about-container {
-    overflow: hidden;
-    position: relative;
-}
 
 .image {
 width: 20%;
