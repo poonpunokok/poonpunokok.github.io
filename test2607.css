@@ -60,6 +60,14 @@ border-radius: 40px;
 	display: none !important;
 }
 
+.spantitle{
+	display: none !important;
+}
+
+.divrating{
+	display: none !important;
+}
+
 clean up the menu 
 a[href="/leaderboards"] {
     display: none !important;
