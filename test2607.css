@@ -56,22 +56,6 @@ border-radius: 40px;
 .library-lost-result-unranked {  color: RGBA( 255, 182, 193, 1 ) !important;}
 .library-won-result-unranked { color: RGBA( 32, 178, 170, 1 ) !important;}
 
-.ratings-title{
-	display: none !important;
-}
-
-.spantitle{
-	display: none !important;
-}
-
-.spanleft{
-	display: none !important;
-}
-
-.spanright{
-	display: none !important;
-}
-
 clean up the menu 
 a[href="/leaderboards"] {
     display: none !important;
