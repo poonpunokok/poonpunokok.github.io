@@ -30,7 +30,7 @@ h1, h2, h3, h4 {
     color: #FFAFB0;
 }
 
-.User td.date,.User td.board_size td.user_info,user_info annulled {
+.User td.date, .User td.board_size, td.user_info, user_info annulled {
     color: #FFAFB0;
 }
 
