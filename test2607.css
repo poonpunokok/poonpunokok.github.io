@@ -9,7 +9,7 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    font-size: 2.5em;
+    font-size: 1.8em;
     font-family: "papyrus", fantasy; 
     color: #FFAFB0;
 }
