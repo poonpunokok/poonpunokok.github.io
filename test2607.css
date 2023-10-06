@@ -30,10 +30,6 @@ h1, h2, h3, h4 {
     color: #FFAFB0;
 }
 
-td.date, td.board_size, td.user_info, td.user_info annulled {
-    color: #FFAFB0;
-}
-
 /*IMAGES*/
 .image {
 width: 20%;
