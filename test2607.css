@@ -34,14 +34,14 @@ h1, h2, h3, h4 {
 .image {
 width: 20%;
 border-radius: 15px;
-margin-left: auto;
-margin-right: auto;
+margin-left: corner;
+margin-right: corner;
 }
 
 .images {
  width: 7%;
-margin-left: auto;
-margin-right: auto;
+margin-left: corner;
+margin-right: corner;
 border-radius: 35px;
 }
 
