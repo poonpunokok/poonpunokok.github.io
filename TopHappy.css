@@ -1,0 +1,46 @@
+body {
+    text-align: center;
+    font-family: "papyrus", fantasy; 
+}   
+
+.container {
+    max-width: none !important;
+    background-image: url('https://raw.githubusercontent.com/FanaroEngineering/fanaro_sabaki_theme_collection/master/screenshots/fire_and_ice.png'); !important;
+}
+
+.avatar-container .Player-username, .avatar-container .Player .Player-rank {
+    font-family: "papyrus", fantasy; 
+    color: #FFAFB0;
+}
+
+span.player-name, span.player-rank {
+    font-family: "papyrus", fantasy;
+    color: #FFAFB0;
+}​
+
+span.Clock.black.mini-goban, span.Clock.white.mini-goban {
+    color: #FFAFB0;
+}
+
+span.score {
+    color: #FFAFB0;
+}
+
+h1, h2, h3, h4 {
+    color: #FFAFB0;
+}
+
+/*library results*/
+.library-won-result-vs-stronger{  background-color: RGBA( 255, 182, 193, 1 ) !important; color:black !important;}
+.library-won-result-vs-weaker{  background-color: RGBA( 255, 160, 122, 1 ) !important; color:black !important;}
+.library-lost-result-vs-weaker {  background-color: RGBA( 32, 178, 170, 1 ) !important; color:black !important;}
+.library-lost-result-vs-stronger{  background-color: RGBA( 135, 206, 250, 1 ) !important; color:black !important;}
+
+/* the game history table*/
+.library-lost-result-unranked {  color: RGBA( 255, 182, 193, 1 ) !important;}
+.library-won-result-unranked { color: RGBA( 32, 178, 170, 1 ) !important;}
+
+/*clean up the menu*/
+a[href="/leaderboards"] {
+    display: none !important;
+}
