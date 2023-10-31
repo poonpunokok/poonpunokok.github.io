@@ -1,7 +1,7 @@
 body {
     text-align: center;
-    font-family: "Agbalumo", fantasy; 
-}   
+    font-family: "Shadows Into Light", fantasy; 
+}
 
 .container {
     max-width: none !important;
@@ -9,12 +9,10 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    font-family: "Agbalumo", fantasy; 
     color: #FFAFB0;
 }
 
 span.player-name, span.player-rank {
-    font-family: "Agbalumo", fantasy; 
     color: #FFAFB0;
 }​
 
