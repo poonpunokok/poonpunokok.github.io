@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    font-family: "Satisfy", fantasy; 
+    font-family: "Nosifer", fantasy; 
 }   
 
 .container {
@@ -9,12 +9,12 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    font-family: "Satisfy", fantasy; 
+    font-family: "Nosifer", fantasy; 
     color: #FFAFB0;
 }
 
 span.player-name, span.player-rank {
-    font-family: "Satisfy", fantasy; 
+    font-family: "Nosifer", fantasy; 
     color: #FFAFB0;
 }​
 
