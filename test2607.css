@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    font-family: "Schoolbell", fantasy; 
+    font-family: "Comic Sans MS", fantasy;
 }   
 
 .container {
@@ -9,6 +9,7 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
+    font-family: "Sriracha", fantasy;
     color: #FFAFB0;
 }
 
