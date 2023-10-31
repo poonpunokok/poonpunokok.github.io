@@ -1,20 +1,20 @@
 body {
     text-align: center;
-    font-family: "papyrus", fantasy; 
+    font-family: "Agbalumo", fantasy; 
 }   
 
 .container {
     max-width: none !important;
-    background-image: url('https://raw.githubusercontent.com/FanaroEngineering/fanaro_sabaki_theme_collection/master/screenshots/fire_and_ice.png'); !important;
+    background-image: url('https://cdn.discordapp.com/attachments/880712138883227688/1168888531591102504/animated.gif?ex=65536746&is=6540f246&hm=e0fc7f7790fc756add9e81d5aebc9139df0f5e032039ac5b8cd9116529fd0162&'); !important;
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    font-family: "papyrus", fantasy; 
+    font-family: "Agbalumo", fantasy; 
     color: #FFAFB0;
 }
 
 span.player-name, span.player-rank {
-    font-family: "papyrus", fantasy;
+    font-family: "Agbalumo", fantasy; 
     color: #FFAFB0;
 }​
 
