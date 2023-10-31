@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    font-family: "papyrus", fantasy; 
+    font-family: "Agbalumo", fantasy; 
 }   
 
 .container {
@@ -9,12 +9,12 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    font-family: "papyrus", fantasy; 
+    font-family: "Agbalumo", fantasy; 
     color: #FFAFB0;
 }
 
 span.player-name, span.player-rank {
-    font-family: "papyrus", fantasy;
+    font-family: "Agbalumo", fantasy; 
     color: #FFAFB0;
 }​
 
@@ -28,21 +28,6 @@ span.score {
 
 h1, h2, h3, h4 {
     color: #FFAFB0;
-}
-
-/*IMAGES*/
-.image {
-width: 20%;
-border-radius: 15px;
-margin-left: corner;
-margin-right: corner;
-}
-
-.images {
- width: 7%;
-margin-left: corner;
-margin-right: corner;
-border-radius: 35px;
 }
 
 /*library results*/
