@@ -10,7 +10,7 @@ body {
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
     color: #FFAFB0;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 span.player-name, span.player-rank {
@@ -29,12 +29,12 @@ span.score {
 
 h1, h2, h4 {
     color: #FFAFB0;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 h3{
     color: #FFAFB0;
-    font-size: 35pt;
+    font-size: 30pt;
 }
 
 /*library results*/
