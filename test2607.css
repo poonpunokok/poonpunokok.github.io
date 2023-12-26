@@ -20,7 +20,7 @@ body {
   opacity: 0.7;
 }
 
-PaginatedTable.game-history-table.clickable-rows{
+.PaginatedTable.game-history-table.clickable-rows{
   background-color: #696969;
 }
 
