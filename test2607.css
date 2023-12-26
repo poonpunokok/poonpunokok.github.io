@@ -5,12 +5,19 @@ body {
 
 .container {
     max-width: none !important;
-    background-image: url('https://cdn.discordapp.com/attachments/1170248756717948991/1189190436129079296/3840c83fa72987355b53a42a73ee7fcb.jpg?ex=659d42e6&is=658acde6&hm=b092e65dd1897ff91400987ab0138cbab0ad46cb8709930ddab40716c885d638&'); !important;
+    background-image: url('https://cdn.discordapp.com/attachments/1170248756717948991/1189191641278451722/snowfall-201496_1280.jpg?ex=659d4405&is=658acf05&hm=1a4bdd0d0bd6b77fe01d98bda4a7b1a9e18bea57ac225ec952045513403455e9&'); !important;
 }
 
+/*fonts and colors*/
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
     color: #FFAFB0;
     font-size: 25px;
+}
+
+.ratings-container{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  opacity: 0.7;
 }
 
 span.player-name, span.player-rank {
@@ -35,6 +42,11 @@ h1, h2, h4 {
 h3 {
     color: #FFAFB0;
     font-size: 25pt;
+}
+
+/*HIDE PARTS*/
+.PlayerIcon.PlayerIcon-128{
+	display: none !important;
 }
 
 /*library results*/
