@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+    font-family: "Comic Sans MS", fantasy;
+}   
+
+.container {
+    max-width: none !important;
+    background-image: url('https://cdn.discordapp.com/attachments/1170248756717948991/1189181520024444939/e92affa7349324a65fc6d1c31555b6a2.jpg?ex=659d3a98&is=658ac598&hm=c7ea440037468d9d57b2a8f1b599d99aa3f8ea73720c27d0cf06448636723f09&'); !important;
+}
+
+.avatar-container .Player-username, .avatar-container .Player .Player-rank {
+    color: #FFAFB0;
+    font-size: 25px;
+}
+
+span.player-name, span.player-rank {
+    color: #FFAFB0;
+    font-size: 16px;
+}​
+
+span.Clock.black.mini-goban, span.Clock.white.mini-goban {
+    color: #FFAFB0;
+    font-size: 16px;
+}
+
+span.score {
+    color: #FFAFB0;
+}
+
+h1, h2, h4 {
+    color: #FFAFB0;
+    font-size: 25px;
+}
+
+h3 {
+    color: #FFAFB0;
+    font-size: 25pt;
+}
+
+/*library results*/
+.library-won-result-vs-stronger{  background-color: RGBA( 255, 182, 193, 1 ) !important; color:black !important;}
+.library-won-result-vs-weaker{  background-color: RGBA( 255, 160, 122, 1 ) !important; color:black !important;}
+.library-lost-result-vs-weaker {  background-color: RGBA( 32, 178, 170, 1 ) !important; color:black !important;}
+.library-lost-result-vs-stronger{  background-color: RGBA( 135, 206, 250, 1 ) !important; color:black !important;}
+
+/* the game history table*/
+.library-lost-result-unranked {  color: RGBA( 255, 182, 193, 1 ) !important;}
+.library-won-result-unranked { color: RGBA( 32, 178, 170, 1 ) !important;}
+
+/*clean up the menu*/
+a[href="/leaderboards"] {
+    display: none !important;
+}
