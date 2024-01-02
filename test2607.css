@@ -24,6 +24,10 @@ body {
   background-color: #696969;
 }
 
+.PaginatedTable.Active Games-table.clickable-rows{
+  background-color: #696969;
+}
+
 .PaginatedTable.review-history-table.clickable-rows{
   background-color: #696969;
 }
