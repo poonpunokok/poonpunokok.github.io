@@ -20,6 +20,55 @@ body {
   opacity: 0.7;
 }
 
+.active-games{
+	background-color:#696969;
+	 border:solid
+}
+
+.move-number{
+  color: #FFAFB0;
+}
+
+.game-name{
+  color: #FFAFB0;
+}
+
+.Clock {
+  color: #FFAFB0;
+}
+
+.size {
+  color: #FFAFB0;
+}
+
+.Player-username {
+  color: #FFAFB0;
+}
+
+.Player-rank {
+  color: #FFAFB0;
+}
+
+.game_name {
+  color: #FFAFB0;
+}
+
+.board_size {
+  color: #FFAFB0;
+}
+
+.date {
+  color: #FFAFB0;
+}
+
+.user_info {
+  color: #FFAFB0;
+}
+
+.sortable {
+  color: #228B22;
+}
+
 .PaginatedTable.game-history-table.clickable-rows{
   background-color: #696969;
 }
