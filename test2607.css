@@ -21,8 +21,8 @@ body {
 }
 
 .active-games{
-	background-color:#696969;
-	 border:solid
+  background-color:#696969;
+  border:solid
 }
 
 .move-number{
@@ -66,7 +66,7 @@ body {
 }
 
 .sortable {
-  color: #228B22;
+  color: #FFAFB0;
 }
 
 .PaginatedTable.game-history-table.clickable-rows{
