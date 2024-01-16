@@ -20,9 +20,10 @@ body {
   opacity: 0.7;
 }
 
-.active-games{
+.active-games{  
   background-color: #696969;
   padding: 10px;
+  opacity: 0.7;
 }
 
 .move-number{
