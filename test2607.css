@@ -21,8 +21,8 @@ body {
 }
 
 .active-games{
-	background-color:#696969;
-	 border:solid
+  background-color: #696969;
+  padding: 10px;
 }
 
 .move-number{
