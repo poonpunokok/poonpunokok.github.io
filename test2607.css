@@ -92,14 +92,10 @@ span.score {
     color: #FFAFB0;
 }
 
-h1, h2, h4 {
-    color: #FFAFB0;
-    font-size: 25px;
-}
-
-h3 {
-    color: #FFAFB0;
-    font-size: 25px;
+h1, h2, h3, h4 {
+    background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 /*library results*/
@@ -113,6 +109,6 @@ h3 {
 .library-won-result-unranked { color: RGBA( 32, 178, 170, 1 ) !important;}
 
 /*clean up the menu*/
-a[href="/leaderboards"] {
+a[href="leaderboards"] {
     display: none !important;
 }
