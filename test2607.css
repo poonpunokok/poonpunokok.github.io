@@ -1,17 +1,17 @@
 body {
-    text-align: center;
-    font-family: cursive,  fantasy;
+ text-align: center;
+ font-family: cursive,  fantasy;
 }   
 
 .container {
-    max-width: none !important;
-    background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1'); !important;
+  max-width: none !important;
+  background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1'); !important;
 }
 
 /*fonts and colors*/
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    color: #FFAFB0;
-    font-size: 25px;
+  color: #FFAFB0;
+  font-size: 25px;
 }
 
 .ratings-container{
@@ -28,42 +28,72 @@ body {
 
 .move-number{
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .game-name{
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .Clock {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .size {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .Player-username {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .Player-rank {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .game_name {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .board_size {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .date {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .user_info {
   color: #FFAFB0;
+  background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .sortable {
@@ -72,10 +102,14 @@ body {
 
 .PaginatedTable.game-history-table.clickable-rows{
   background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 .PaginatedTable.review-history-table.clickable-rows{
   background-color: #696969;
+  padding: 10px;
+  opacity: 0.7;
 }
 
 span.player-name, span.player-rank {
@@ -90,12 +124,14 @@ span.Clock.black.mini-goban, span.Clock.white.mini-goban {
 
 span.score {
     color: #FFAFB0;
+    padding: 10px;
+    opacity: 0.7;
 }
 
 h1, h2, h3, h4 {
     background-color: #696969;
-  padding: 10px;
-  opacity: 0.7;
+    padding: 10px;
+    opacity: 0.7;
 }
 
 /*library results*/
