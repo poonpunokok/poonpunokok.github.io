@@ -1,11 +1,6 @@
-body {
-    text-align: center;
-     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}   
-
-.container {
+.container {    
     max-width: none !important;
-    background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1'); !important;
+    background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif'); !important;
 }
 
 /*fonts and colors*/
@@ -15,13 +10,13 @@ body {
 }
 
 .ratings-container{
-  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
+  background-color: #696969;
   padding: 10px;
   opacity: 0.7;
 }
 
 .active-games{
-  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
+  background-color: #696969;
   padding: 10px;
   opacity: 0.7;
 }
@@ -71,25 +66,25 @@ body {
 }
 
 .PaginatedTable.game-history-table.clickable-rows{
-  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
+  background-color: #696969;
 }
 
-PaginatedTable.review-history-table.clickable-rows{
-  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
+.PaginatedTable.review-history-table.clickable-rows{
+  background-color: #696969;
 }
 
 span.player-name, span.player-rank {
-  color: #FFAFB0;
-  font-size: 16px;
+    color: #FFAFB0;
+    font-size: 16px;
 }​
 
 span.Clock.black.mini-goban, span.Clock.white.mini-goban {
-  color: #FFAFB0;
-  font-size: 16px;
+    color: #FFAFB0;
+    font-size: 16px;
 }
 
 span.score {
-  color: #FFAFB0;
+    color: #FFAFB0;
 }
 
 h1, h2, h3, h4 {
