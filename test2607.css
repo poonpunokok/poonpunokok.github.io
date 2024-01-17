@@ -15,13 +15,13 @@ body {
 }
 
 .ratings-container{
-  background-color: #696969;
+  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
   padding: 10px;
   opacity: 0.7;
 }
 
 .active-games{
-  background-color: #696969;
+  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
   padding: 10px;
   opacity: 0.7;
 }
@@ -71,25 +71,25 @@ body {
 }
 
 .PaginatedTable.game-history-table.clickable-rows{
-  background-color: #696969;
+  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
 }
 
-.PaginatedTable.review-history-table.clickable-rows{
-  background-color: #696969;
+PaginatedTable.review-history-table.clickable-rows{
+  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif.');
 }
 
 span.player-name, span.player-rank {
-    color: #FFAFB0;
-    font-size: 16px;
+  color: #FFAFB0;
+  font-size: 16px;
 }​
 
 span.Clock.black.mini-goban, span.Clock.white.mini-goban {
-    color: #FFAFB0;
-    font-size: 16px;
+  color: #FFAFB0;
+  font-size: 16px;
 }
 
 span.score {
-    color: #FFAFB0;
+  color: #FFAFB0;
 }
 
 h1, h2, h3, h4 {
