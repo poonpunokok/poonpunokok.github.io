@@ -1,3 +1,8 @@
+body {
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}   
+
 .container {    
     max-width: none !important;
     background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif'); !important;
