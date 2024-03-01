@@ -9,6 +9,26 @@ body {
  background-image: url('https://media.tenor.com/bx7hbOEm4gMAAAAi/sakura-leaves.gif'); !important;
 }
 
+/*ANIMATION*/
+
+.about-container h1 {
+    color:rgba(247, 163, 38, 0.89);
+	/*color:RGBA( 0, 206, 209, 1 );*/
+   font-family: "Lucida Handwriting", cursive; 
+    font-size: 3em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Starting position */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%);
+    /* Apply animation to this element */	
+    -moz-animation: scrolling 15s linear infinite;
+    -webkit-animation: scrolling 15s linear infinite;
+    animation: scrolling 15s linear infinite;
+}
+
 /*IMAGES AND SHAPING*/
 .image {
  width: 20%;
