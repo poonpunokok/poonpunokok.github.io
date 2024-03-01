@@ -21,18 +21,17 @@ body {
 
 /* IMAGES AND SHAPING*/
 .image {
- width: 20%;
- border-radius: 20px;
- margin-left: auto;
- margin-right: auto;
+width: 20%;
+border-radius: 20px;
+margin-left: auto;
+margin-right: auto;
 }
 .images {
  width: 7%;
- margin-left: auto;
- margin-right: auto;
- border-radius: 40px;
+margin-left: auto;
+margin-right: auto;
+border-radius: 40px;
 }
-
 /*fonts and colors*/
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
  color: #FFAFB0;
