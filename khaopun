@@ -1,0 +1,105 @@
+/*modify the elements of the page*/
+body {
+ text-align: center;
+ font-family: "Rubik Burned";
+}   
+.container {    
+ max-width: none !important;
+ background-image: url(''); !important;
+}
+
+ /* Starting position */
+ -moz-transform:translateX(100%);
+ -webkit-transform:translateX(100%);	
+ transform:translateX(100%);
+ 
+ /* Apply animation to this element */	
+ -moz-animation: scrolling 15s linear infinite;
+ -webkit-animation: scrolling 15s linear infinite;
+ animation: scrolling 15s linear infinite;
+}
+
+/*fonts and colors*/
+.avatar-container .Player-username, .avatar-container .Player .Player-rank {
+ color: #FFAFB0;
+ font-size: 25px;
+}
+.ratings-container{
+ background-color: #696969;
+ padding: 10px;
+ opacity: 0.7;
+}
+.active-games{
+ background-color: #696969;
+ padding: 10px;
+ opacity: 0.7;
+}
+.move-number{
+ color: #FFAFB0;
+}
+.game-name{
+ color: #FFAFB0;
+}
+.Clock {
+ color: #FFAFB0;
+}
+.size {
+ color: #FFAFB0;
+}
+.Player-username {
+ color: #FFAFB0;
+}
+.Player-rank {
+ color: #FFAFB0;
+}
+.game_name {
+ color: #FFAFB0;
+}
+.board_size {
+ color: #FFAFB0;
+}
+.date {
+ color: #FFAFB0;
+}
+.user_info {
+ color: #FFAFB0;
+}
+.sortable {
+ color: #FFAFB0;
+}
+.PaginatedTable.game-history-table.clickable-rows{
+ background-color: #696969;
+}
+.PaginatedTable.review-history-table.clickable-rows{
+ background-color: #696969;
+}
+span.player-name, span.player-rank {
+ color: #FFAFB0;
+ font-size: 16px;
+​}
+span.Clock.black.mini-goban, span.Clock.white.mini-goban {
+ color: #FFAFB0;
+ font-size: 16px;
+}
+span.score {
+ color: #FFAFB0;
+}
+h1, h2, h3, h4 {
+ color: #FFAFB0;
+ font-size: 25px;
+}
+
+/*library results*/
+.library-won-result-vs-stronger{  background-color: RGBA( 255, 182, 193, 1 ) !important; color:black !important;}
+.library-won-result-vs-weaker{  background-color: RGBA( 255, 160, 122, 1 ) !important; color:black !important;}
+.library-lost-result-vs-weaker {  background-color: RGBA( 32, 178, 170, 1 ) !important; color:black !important;}
+.library-lost-result-vs-stronger{  background-color: RGBA( 135, 206, 250, 1 ) !important; color:black !important;}
+
+/* the game history table*/
+.library-lost-result-unranked {  color: RGBA( 255, 182, 193, 1 ) !important;}
+.library-won-result-unranked { color: RGBA( 32, 178, 170, 1 ) !important;}
+
+/*clean up the menu*/
+a[href="/leaderboards"] {
+ display: none !important;
+}
