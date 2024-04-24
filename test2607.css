@@ -14,7 +14,10 @@ body {
  transform:translateX(100%);
  
  /* Apply animation to this element */	
- 
+ -moz-animation: scrolling 15s linear infinite;
+ -webkit-animation: scrolling 15s linear infinite;
+ animation: scrolling 15s linear infinite;
+}
 
 /*fonts and colors*/
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
@@ -74,24 +77,16 @@ span.player-name, span.player-rank {
  color: #FFAFB0;
  font-size: 16px;
 ​}
-span.Clock.black.mini-goban, span .Clock.white.mini-goban {
+span.Clock.black.mini-goban, span.Clock.white.mini-goban {
  color: #FFAFB0;
  font-size: 16px;
 }
 span.score {
  color: #FFAFB0;
 }
-h1, h2, h3 {
-    animation:rainbowText 2s infinite;
-}
-@keyframes rainbowText{
-    0%   {  color: #FF0900; }
-    17%  {  color: #FF7F00; }
-    33%  {  color: #FFEF00; }
-    50%  {  color: #00F11D; }
-    67%  {  color: #0079FF; }
-    83%  {  color: #A800FF; }
-    100% {  color: #FF0900; }
+h1, h2, h3, h4 {
+ color: #FFAFB0;
+ font-size: 25px;
 }
 
 /*library results*/
