@@ -8,33 +8,74 @@ body {
     background-image: url('https://cdn.pixabay.com/animation/2023/07/13/14/22/14-22-36-485_512.gif'); !important;
 }
 
+/*fonts and colors*/
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    color: #FFAFB0;
-    font-size: 25px;
+ color: #FFAFB0;
+ font-size: 25px;
 }
-
+.ratings-container{
+ background-color: #696969;
+ padding: 10px;
+ opacity: 0.7;
+}
+.active-games{
+ background-color: #696969;
+ padding: 10px;
+ opacity: 0.7;
+}
+.move-number{
+ color: #FFAFB0;
+}
+.game-name{
+ color: #FFAFB0;
+}
+.Clock {
+ color: #FFAFB0;
+}
+.size {
+ color: #FFAFB0;
+}
+.Player-username {
+ color: #FFAFB0;
+}
+.Player-rank {
+ color: #FFAFB0;
+}
+.game_name {
+ color: #FFAFB0;
+}
+.board_size {
+ color: #FFAFB0;
+}
+.date {
+ color: #FFAFB0;
+}
+.user_info {
+ color: #FFAFB0;
+}
+.sortable {
+ color: #FFAFB0;
+}
+.PaginatedTable.game-history-table.clickable-rows{
+ background-color: #696969;
+}
+.PaginatedTable.review-history-table.clickable-rows{
+ background-color: #696969;
+}
 span.player-name, span.player-rank {
-    color: #FFAFB0;
-    font-size: 16px;
-}​
-
+ color: #FFAFB0;
+ font-size: 16px;
+​}
 span.Clock.black.mini-goban, span.Clock.white.mini-goban {
-    color: #FFAFB0;
-    font-size: 16px;
+ color: #FFAFB0;
+ font-size: 16px;
 }
-
 span.score {
-    color: #FFAFB0;
+ color: #FFAFB0;
 }
-
-h1, h2, h4 {
-    color: #FFAFB0;
-    font-size: 25px;
-}
-
-h3 {
-    color: #FFAFB0;
-    font-size: 25pt;
+h1, h2, h3, h4 {
+ color: #FFAFB0;
+ font-size: 25px;
 }
 
 /*library results*/
@@ -49,5 +90,5 @@ h3 {
 
 /*clean up the menu*/
 a[href="/leaderboards"] {
-    display: none !important;
+ display: none !important;
 }
