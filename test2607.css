@@ -1,7 +1,7 @@
 /*modify the elements of the page*/
 body {
  text-align: center;
- font-family: "Rubik Burned";
+ font-family: "papyrus", fantasy;
 }   
 .container {    
  max-width: none !important;
