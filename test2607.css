@@ -8,17 +8,6 @@ body {
  background-image: url('https://i0.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1'); !important;
 }
 
- /* Starting position */
- -moz-transform:translateX(100%);
- -webkit-transform:translateX(100%);	
- transform:translateX(100%);
- 
- /* Apply animation to this element */	
- -moz-animation: scrolling 15s linear infinite;
- -webkit-animation: scrolling 15s linear infinite;
- animation: scrolling 15s linear infinite;
-}
-
 /*fonts and colors*/
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
  color: #FFAFB0;
@@ -84,9 +73,70 @@ span.Clock.black.mini-goban, span.Clock.white.mini-goban {
 span.score {
  color: #FFAFB0;
 }
-h1, h2, h3, h4 {
- color: #FFAFB0;
- font-size: 25px;
+
+h2, h3 {
+    animation:rainbowText 2s infinite;
+}
+@keyframes rainbowText{
+    0%   {  color: #FF0900; }
+    17%  {  color: #FF7F00; }
+    33%  {  color: #FFEF00; }
+    50%  {  color: #00F11D; }
+    67%  {  color: #0079FF; }
+    83%  {  color: #A800FF; }
+    100% {  color: #FF0900; }
+}
+
+.about-container {
+    overflow: hidden;
+    position: relative;
+}
+.about-container h1 {
+    color: #FFAFB0;
+    font-size: 3em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Starting position */
+    -moz-transform:translateX(100%);
+    -webkit-transform:translateX(100%);	
+    transform:translateX(100%);
+    /* Apply animation to this element */	
+    -moz-animation: scrolling 15s linear infinite;
+    -webkit-animation: scrolling 15s linear infinite;
+    animation: scrolling 15s linear infinite;
+}
+/* Move it (define the animation) */
+@-moz-keyframes scrolling {
+    0%   { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes scrolling {
+    0%   { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes scrolling {
+     0%   { 
+        -moz-transform: translateX(100%); /* Firefox bug fix */
+        -webkit-transform: translateX(100%); /* Firefox bug fix */
+        transform: translateX(100%); 		
+    }
+    100% { 
+        -moz-transform: translateX(-100%); /* Firefox bug fix */
+        -webkit-transform: translateX(-100%); /* Firefox bug fix */
+        transform: translateX(-100%); 
+    }
+}
+
+.about-container h3 {
+    animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%   {  opacity: 1; }
+    49%  {  opacity: 1; }
+    60%  {  opacity: 0; }
+    99%  {  opacity: 0; }
+    100% {  opacity: 1; }
 }
 
 /*library results*/
