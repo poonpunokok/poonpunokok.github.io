@@ -65,6 +65,12 @@ border-radius: 40px;
 .date {
  color: #FFAFB0;
 }
+
+}
+td.handicap {
+ color: #FFAFB0;
+}
+
 .user_info {
  color: #FFAFB0;
 }
