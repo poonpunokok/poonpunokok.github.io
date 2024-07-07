@@ -28,40 +28,51 @@ border-radius: 40px;
  color: #FFAFB0;
  font-size: 25px;
 }
+
 .ratings-container{
  background-color: #696969;
  padding: 10px;
  opacity: 0.7;
 }
+
 .active-games{
  background-color: #696969;
  padding: 10px;
  opacity: 0.7;
 }
+
 .move-number{
  color: #FFAFB0;
 }
+
 .game-name{
  color: #FFAFB0;
 }
+
 .Clock {
  color: #FFAFB0;
 }
+
 .size {
  color: #FFAFB0;
 }
+
 .Player-username {
  color: #FFAFB0;
 }
+
 .Player-rank {
  color: #FFAFB0;
 }
+
 .game_name {
  color: #FFAFB0;
 }
+
 .board_size {
  color: #FFAFB0;
 }
+
 .date {
  color: #FFAFB0;
 }
@@ -73,29 +84,35 @@ td.handicap {
 .user_info {
  color: #FFAFB0;
 }
+
 .sortable {
  color: #FFAFB0;
 }
+
 .PaginatedTable.game-history-table.clickable-rows{
  background-color: #696969;
 }
+
 .PaginatedTable.review-history-table.clickable-rows{
  background-color: #696969;
 }
+
 span.player-name, span.player-rank {
  color: #FFAFB0;
  font-size: 16px;
 ​}
+
 span.Clock.black.mini-goban, span.Clock.white.mini-goban {
  color: #FFAFB0;
  font-size: 16px;
 }
+
 span.score {
  color: #FFAFB0;
 }
 
 h2, h3 {
-    animation:rainbowText 2s infinite;
+    animation:rainbowText 3s infinite;
 }
 @keyframes rainbowText{
     0%   {  color: #FF0900; }
@@ -111,21 +128,25 @@ h2, h3 {
     overflow: hidden;
     position: relative;
 }
+
 .about-container h1 {
     color: #FFAFB0;
     font-size: 3em;
     position: absolute;
     width: 100%;
     height: 100%;
-    /* Starting position */
+   
+ /* Starting position */
     -moz-transform:translateX(100%);
     -webkit-transform:translateX(100%);	
     transform:translateX(100%);
-    /* Apply animation to this element */	
+    
+ /* Apply animation to this element */	
     -moz-animation: scrolling 15s linear infinite;
     -webkit-animation: scrolling 15s linear infinite;
     animation: scrolling 15s linear infinite;
 }
+
 /* Move it (define the animation) */
 @-moz-keyframes scrolling {
     0%   { -moz-transform: translateX(100%); }
