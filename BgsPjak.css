@@ -1,33 +1,56 @@
-/* Universal rule to make all text sky blue */
-* {
-    color: #00FF00 !important;
-    text-shadow: 0 0 1px #00FF00 !important;
-}
-
-/* Modify the elements of the page */
 body {
-    text-align: center !important;
-    font-family: "Courier New", monospace !important;
+    text-align: center;
+    font-family: "Comic Sans MS", fantasy;
+}   
+
+.container {
+    max-width: none !important;
     background-image: url('https://cdn.pixabay.com/animation/2023/07/13/14/22/14-22-36-485_512.gif'); !important;
-    cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym53.ani),
-                url(https://cur.cursors-4u.net/symbols/sym-1/sym53.png),
-                auto !important;
-    position: relative !important;
 }
 
-body::before {
-    content: '' !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1)),
-                repeating-linear-gradient(
-                    0deg,
-                    rgba(0, 183, 235, 0.2),
-                    rgba(0, 183, 235, 0.2) 1px,
-                    transparent 1px,
+.avatar-container .Player-username, .avatar-container .Player .Player-rank {
+    color: #FFAFB0;
+    font-size: 25px;
+}
+
+span.player-name, span.player-rank {
+    color: #FFAFB0;
+    font-size: 16px;
+}​
+
+span.Clock.black.mini-goban, span.Clock.white.mini-goban {
+    color: #FFAFB0;
+    font-size: 16px;
+}
+
+span.score {
+    color: #FFAFB0;
+}
+
+h1, h2, h4 {
+    color: #FFAFB0;
+    font-size: 25px;
+}
+
+h3 {
+    color: #FFAFB0;
+    font-size: 25pt;
+}
+
+/*library results*/
+.library-won-result-vs-stronger{  background-color: RGBA( 255, 182, 193, 1 ) !important; color:black !important;}
+.library-won-result-vs-weaker{  background-color: RGBA( 255, 160, 122, 1 ) !important; color:black !important;}
+.library-lost-result-vs-weaker {  background-color: RGBA( 32, 178, 170, 1 ) !important; color:black !important;}
+.library-lost-result-vs-stronger{  background-color: RGBA( 135, 206, 250, 1 ) !important; color:black !important;}
+
+/* the game history table*/
+.library-lost-result-unranked {  color: RGBA( 255, 182, 193, 1 ) !important;}
+.library-won-result-unranked { color: RGBA( 32, 178, 170, 1 ) !important;}
+
+/*clean up the menu*/
+a[href="/leaderboards"] {
+    display: none !important;
+}
                     transparent 20px
                 ) !important;
     background-size: 100% 200% !important;
