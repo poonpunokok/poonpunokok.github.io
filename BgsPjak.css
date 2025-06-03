@@ -1,6 +1,9 @@
 body {
-    text-align: center;
-    font-family: "Comic Sans MS", fantasy;
+    text-align: center !important;
+    font-family: "Courier New", monospace !important;
+    cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym53.ani),
+            url(https://cur.cursors-4u.net/symbols/sym-1/sym53.png),
+            auto !important;
 }   
 
 .container {
@@ -9,32 +12,32 @@ body {
 }
 
 .avatar-container .Player-username, .avatar-container .Player .Player-rank {
-    color: #FFAFB0;
-    font-size: 25px;
+    color: #FFAFB0 !important;
+    font-size: 25px !important;
 }
 
 span.player-name, span.player-rank {
-    color: #FFAFB0;
-    font-size: 16px;
+    color: #FFAFB0 !important;
+    font-size: 16px !important;
 }​
 
 span.Clock.black.mini-goban, span.Clock.white.mini-goban {
-    color: #FFAFB0;
-    font-size: 16px;
+    color: #FFAFB0 !important;
+    font-size: 16px !important;
 }
 
 span.score {
-    color: #FFAFB0;
+    color: #FFAFB0 !important;
 }
 
 h1, h2, h4 {
-    color: #FFAFB0;
-    font-size: 25px;
+    color: #FFAFB0 !important;
+    font-size: 25px !important;
 }
 
 h3 {
-    color: #FFAFB0;
-    font-size: 25pt;
+    color: #FFAFB0 !important;
+    font-size: 25pt !important;
 }
 
 /*library results*/
