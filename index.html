@@ -1,1 +1,35 @@
-<iframe src="https://sites.google.com/view/poonpungopage/home" width="600" height="400" style="border: none;"></iframe>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Utility App</title>
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>My Utility App</header>
+
+<nav>
+    <a href="index.html" class="active">หน้าแรก</a>
+    <a href="speedtest.html">เทสเน็ต</a>
+    <a href="tools.html">เครื่องมือ</a>
+</nav>
+
+<main class="card">
+    <h2>ยินดีต้อนรับ</h2>
+    <p>เว็บนี้รองรับ PWA เพิ่มเป็นแอปบน iOS ได้</p>
+</main>
+
+<script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+</body>
+</html>
