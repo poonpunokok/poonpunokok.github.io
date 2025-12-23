@@ -7,42 +7,154 @@
 
 <style>
 :root{
---bg:#f2f2f7;--card:#fff;--primary:#2563eb;--secondary:#8e8e93;--text:#111827
+--bg:#f2f2f7;
+--card:#ffffff;
+--primary:#2563eb;
+--secondary:#8e8e93;
+--text:#111827;
+--soft:#f9fafb;
+--shadow:0 12px 28px rgba(0,0,0,.08)
 }
+
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
 body{
-margin:0;font-family:-apple-system,BlinkMacSystemFont,system-ui;
-background:var(--bg);color:var(--text)
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,system-ui;
+background:var(--bg);
+color:var(--text)
 }
+
+/* ===== Header ===== */
 header{
-padding:env(safe-area-inset-top) 16px 16px;
-text-align:center;font-size:22px;font-weight:600
+padding:env(safe-area-inset-top) 20px 14px;
+font-size:26px;
+font-weight:700;
+letter-spacing:-.3px
 }
-main{padding:16px;padding-bottom:100px}
+
+/* ===== Layout ===== */
+main{
+padding:16px;
+padding-bottom:110px
+}
+
+/* ===== Hero Card ===== */
+.hero{
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+color:#fff;
+border-radius:26px;
+padding:22px;
+margin-bottom:18px;
+box-shadow:0 18px 40px rgba(37,99,235,.35)
+}
+
+.hero-title{
+font-size:20px;
+font-weight:600;
+opacity:.95
+}
+
+.hero-status{
+display:flex;
+gap:12px;
+margin-top:16px;
+flex-wrap:wrap
+}
+
+.pill{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(10px);
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+font-weight:500
+}
+
+/* ===== Card ===== */
 .card{
-background:var(--card);border-radius:20px;padding:20px;margin-bottom:16px;
-box-shadow:0 8px 24px rgba(0,0,0,.06)
+background:var(--card);
+border-radius:22px;
+padding:20px;
+margin-bottom:18px;
+box-shadow:var(--shadow)
 }
-.actions{
-display:grid;grid-template-columns:repeat(2,1fr);gap:14px
+
+.card h3{
+margin:0 0 14px;
+font-size:18px
 }
-.action{
-background:#f9fafb;border-radius:16px;padding:18px;
-text-align:center;font-weight:500
+
+/* ===== Menu Grid ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px
 }
+
+.tile{
+background:var(--soft);
+border-radius:20px;
+padding:20px;
+box-shadow:inset 0 0 0 1px #e5e7eb;
+transition:.15s;
+text-decoration:none;
+color:inherit
+}
+
+.tile:active{
+transform:scale(.97);
+background:#eef2ff
+}
+
+.icon{
+font-size:28px;
+margin-bottom:10px
+}
+
+.label{
+font-weight:600
+}
+
+.sub{
+font-size:13px;
+color:var(--secondary);
+margin-top:4px
+}
+
+/* ===== Bottom Nav ===== */
 nav{
-position:fixed;bottom:0;left:0;right:0;height:78px;
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+height:82px;
 padding-bottom:env(safe-area-inset-bottom);
 background:rgba(255,255,255,.92);
 backdrop-filter:blur(20px);
-display:flex;border-top:1px solid #e5e7eb
+display:flex;
+border-top:1px solid #e5e7eb
 }
+
 nav a{
-flex:1;text-align:center;padding-top:10px;
-text-decoration:none;color:var(--secondary);font-size:12px
+flex:1;
+text-align:center;
+padding-top:10px;
+text-decoration:none;
+color:var(--secondary);
+font-size:12px
 }
-nav a.active{color:var(--primary);font-weight:600}
-nav span{display:block;font-size:22px}
+
+nav a.active{
+color:var(--primary);
+font-weight:600
+}
+
+nav span{
+display:block;
+font-size:22px;
+margin-bottom:2px
+}
 </style>
 </head>
 
@@ -51,23 +163,52 @@ nav span{display:block;font-size:22px}
 <header>Utility App</header>
 
 <main>
-<div class="card">
-<h3>สถานะระบบ</h3>
-<p id="net">🌐 Checking...</p>
-<p id="time">⏱ --:--</p>
+
+<!-- Hero -->
+<div class="hero">
+<div class="hero-title">ภาพรวมระบบ</div>
+<div class="hero-status">
+<div class="pill" id="net">🌐 Checking</div>
+<div class="pill" id="time">⏱ --:--</div>
+<div class="pill">📱 iOS Utility</div>
+</div>
 </div>
 
+<!-- Menu -->
 <div class="card">
 <h3>เมนูหลัก</h3>
-<div class="actions">
-<div class="action">📶 เทสเน็ต</div>
-<div class="action">📊 Dashboard</div>
-<div class="action">🔋 ดูแลแบต</div>
-<div class="action">⚙️ เครื่องมือ</div>
+<div class="grid">
+
+<a href="speed.html" class="tile">
+<div class="icon">📶</div>
+<div class="label">Speed Test</div>
+<div class="sub">ทดสอบความเร็วเน็ต</div>
+</a>
+
+<div class="tile">
+<div class="icon">📊</div>
+<div class="label">Dashboard</div>
+<div class="sub">สถานะอุปกรณ์</div>
+</div>
+
+<div class="tile">
+<div class="icon">🔋</div>
+<div class="label">Battery Care</div>
+<div class="sub">ดูแลสุขภาพแบต</div>
+</div>
+
+<a href="tools.html" class="tile">
+<div class="icon">⚙️</div>
+<div class="label">Tools</div>
+<div class="sub">เครื่องมือระบบ</div>
+</a>
+
 </div>
 </div>
+
 </main>
 
+<!-- Nav -->
 <nav>
 <a href="index.html" class="active"><span>🏠</span>Home</a>
 <a href="speed.html"><span>📶</span>Speed</a>
