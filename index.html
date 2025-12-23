@@ -3,208 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Utility</title>
+
+<title>My Dashboard</title>
+
+<!-- iOS Web App -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <style>
 :root{
---bg:#f2f2f7;
---card:#ffffff;
---primary:#0a84ff;
---text:#1c1c1e;
---muted:#8e8e93;
---separator:#e5e5ea;
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#38bdf8;
 }
-
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-
+*{box-sizing:border-box}
 body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,system-ui;
-background:var(--bg);
-color:var(--text)
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:linear-gradient(180deg,#020617,#020617 40%,#020617);
+  color:var(--text);
 }
-
-/* ===== Large Title ===== */
-header{
-padding:env(safe-area-inset-top) 16px 8px;
+.app{
+  padding:16px;
+  max-width:480px;
+  margin:auto;
 }
-
-header h1{
-margin:0;
-font-size:34px;
-font-weight:700;
-letter-spacing:-.6px
+.header{
+  margin-bottom:16px;
 }
-
-/* ===== Content ===== */
-main{
-padding-bottom:120px
+.header h1{
+  margin:0;
+  font-size:22px;
 }
-
-/* ===== Status ===== */
-.status{
-margin:16px;
-padding:16px;
-background:var(--card);
-border-radius:14px
+.header p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:14px;
 }
-
-.status-row{
-display:flex;
-gap:10px;
-flex-wrap:wrap
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:16px;
 }
-
-.pill{
-background:#f2f2f7;
-padding:6px 12px;
-border-radius:999px;
-font-size:14px
+.time{
+  font-size:36px;
+  font-weight:600;
 }
-
-/* ===== Section ===== */
-.section{
-margin-top:16px;
-background:var(--card);
-border-radius:14px;
-overflow:hidden;
-margin-left:16px;
-margin-right:16px
+.date{
+  color:var(--muted);
 }
-
-.cell{
-display:flex;
-align-items:center;
-padding:14px 16px;
-text-decoration:none;
-color:inherit;
-border-bottom:1px solid var(--separator)
+.btn{
+  display:block;
+  width:100%;
+  padding:14px;
+  border-radius:14px;
+  border:none;
+  background:var(--accent);
+  color:#020617;
+  font-size:16px;
+  font-weight:600;
 }
-
-.cell:last-child{
-border-bottom:none
+.btn:active{opacity:.8}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
-
-.cell:active{
-background:#e5e5ea
+.quick{
+  background:#020617;
+  border-radius:14px;
+  padding:14px;
+  text-align:center;
+  font-size:14px;
 }
-
-/* ===== Icon ===== */
-.icon{
-width:34px;
-height:34px;
-border-radius:8px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:18px;
-margin-right:14px;
-color:#fff;
-background:#0a84ff
+.quick span{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:12px;
 }
-
-/* ===== Text ===== */
-.cell-title{
-font-size:16px;
-font-weight:500
-}
-
-.cell-sub{
-font-size:13px;
-color:var(--muted)
-}
-
-.cell-text{
-flex:1
-}
-
-.chevron{
-color:var(--muted);
-font-size:18px
-}
-
-/* ===== Tab Bar ===== */
-nav{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:83px;
-padding-bottom:env(safe-area-inset-bottom);
-background:rgba(255,255,255,.92);
-backdrop-filter:blur(20px);
-display:flex;
-border-top:1px solid var(--separator)
-}
-
-nav a{
-flex:1;
-text-align:center;
-padding-top:8px;
-font-size:11px;
-color:var(--muted);
-text-decoration:none
-}
-
-nav a.active{
-color:var(--primary)
-}
-
-nav span{
-display:block;
-font-size:22px;
-margin-bottom:2px
+iframe{
+  width:100%;
+  height:360px;
+  border:none;
+  border-radius:12px;
 }
 </style>
 </head>
 
 <body>
+<div class="app">
 
-<header>
-<h1>Utility</h1>
-</header>
+  <!-- Header -->
+  <div class="header">
+    <h1>My Dashboard</h1>
+    <p>Speed • Tools • Network</p>
+  </div>
 
-<main>
+  <!-- Clock -->
+  <div class="card">
+    <div class="time" id="time">00:00</div>
+    <div class="date" id="date">—</div>
+  </div>
 
-<!-- Status -->
-<div class="status">
-<div class="status-row">
-<div class="pill" id="net">🌐 Checking</div>
-<div class="pill" id="time">⏱ --:--</div>
-<div class="pill">📱 iOS App</div>
-</div>
-</div>
+  <!-- Speed Test -->
+  <div class="card">
+    <h3>Speed Test</h3>
+    <iframe src="https://openspeedtest.com/speedtest"></iframe>
+  </div>
 
-<!-- Main Menu -->
-<div class="section">
-
-<a href="speed.html" class="cell">
-<div class="icon">📶</div>
-<div class="cell-text">
-<div class="cell-title">Speed Test</div>
-<div class="cell-sub">ทดสอบความเร็วอินเทอร์เน็ต</div>
-</div>
-<div class="chevron">›</div>
-</a>
-
-</div>
-
-</main>
-
-<!-- Tab Bar -->
-<nav>
-<a href="index.html" class="active"><span>🏠</span>Home</a>
-<a href="speed.html"><span>📶</span>Speed</a>
-</nav>
-
-<script>
-function updateTime(){
-const d=new Date();
-time.textContent="⏱ "+d.toLocaleTimeString("th-TH",{hour:'2-digit',minute:'2-digit'});
-}
-setInterval(updateTime,1000);updateTime();
-net.textContent=navigator.onLine?"🌐 Online":"🌐 Offline";
-</script>
-
-</body>
-</html>
+  <!-- Quick Tools -->
+  <div class="card">
+    <h3>Quick Access</h3>
+    <div class="grid">
+      <div class="quick" onclick="openLink('https://192.168.1.1')">
+        Router
+        <span>Admin</span>
+      </div>
+      <div class="quick" onclick="openLink('https://www.google.com')">
+        Browser
+        <span>Google</span>
+      </div>
+      <div class="quick" onclick="openLink('https://fast.com')">
+        Fast
+        <span>Netflix</span>
+      <
