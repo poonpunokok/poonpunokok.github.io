@@ -42,7 +42,7 @@ body{
 }
 
 .time{font-size:44px;font-weight:600}
-.date{color:var(--muted);margin-top:4px}
+.date{margin-top:4px;color:var(--muted)}
 
 .row{margin-bottom:12px}
 .label{font-size:13px;color:var(--muted)}
@@ -66,18 +66,6 @@ button{
   border-radius:18px;
 }
 iframe{width:100%;height:360px;border:none}
-
-.history{
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.5;
-}
-.clear{
-  margin-top:12px;
-  background:none;
-  border:1px solid var(--border);
-  color:var(--text);
-}
 </style>
 </head>
 
@@ -86,7 +74,7 @@ iframe{width:100%;height:360px;border:none}
 
 <div class="header">
   <h1>Network Status</h1>
-  <p>Wi-Fi / 4G / 5G</p>
+  <p>Current Network (Auto)</p>
 </div>
 
 <!-- Clock -->
@@ -95,19 +83,19 @@ iframe{width:100%;height:360px;border:none}
   <div class="date" id="date">—</div>
 </div>
 
-<!-- Network Info -->
+<!-- Current Network -->
 <div class="card">
   <div class="row">
-    <div class="label">Connection</div>
-    <div class="value" id="conn">Detecting…</div>
+    <div class="label">Current Network</div>
+    <div class="value" id="network">Detecting…</div>
   </div>
   <div class="row">
-    <div class="label">IPv4</div>
-    <div class="value" id="ipv4">—</div>
+    <div class="label">Public IP</div>
+    <div class="value" id="ip">—</div>
   </div>
   <div class="row">
-    <div class="label">IPv6</div>
-    <div class="value" id="ipv6">—</div>
+    <div class="label">IP Version</div>
+    <div class="value" id="ipver">—</div>
   </div>
   <div class="row">
     <div class="label">ISP / ASN</div>
@@ -115,19 +103,12 @@ iframe{width:100%;height:360px;border:none}
   </div>
 </div>
 
-<!-- Speed -->
+<!-- Speed Test -->
 <div class="card">
   <button onclick="toggleSpeed()">Run Speed Test</button>
   <div class="speed-box" id="speed">
     <iframe src="https://openspeedtest.com/speedtest"></iframe>
   </div>
-</div>
-
-<!-- History -->
-<div class="card">
-  <div class="label">History (Last connections)</div>
-  <div class="history" id="history">No data</div>
-  <button class="clear" onclick="clearHistory()">Clear History</button>
 </div>
 
 </div>
@@ -139,58 +120,45 @@ function updateClock(){
   time.textContent=n.toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'});
   date.textContent=n.toLocaleDateString('th-TH',{weekday:'long',day:'numeric',month:'long'});
 }
-setInterval(updateClock,1000); updateClock();
+setInterval(updateClock,1000);
+updateClock();
 
 /* Speed */
 function toggleSpeed(){
   speed.style.display = speed.style.display==='block'?'none':'block';
 }
 
-/* IP v4 */
-fetch('https://api.ipify.org?format=json')
-  .then(r=>r.json())
-  .then(d=>ipv4.textContent=d.ip)
-  .catch(()=>ipv4.textContent='Unavailable');
+/* Current Network (AUTO / NO GUESS) */
+Promise.all([
+  fetch('https://ipinfo.io/json'),
+  fetch('https://api.ipify.org?format=json'),
+  fetch('https://api64.ipify.org?format=json').catch(()=>null)
+])
+.then(async ([info,v4,v6])=>{
+  const d = await info.json();
+  const ipv4 = await v4.json();
+  let ipv6 = null;
+  try{ if(v6) ipv6 = await v6.json(); }catch{}
 
-/* IP v6 */
-fetch('https://api64.ipify.org?format=json')
-  .then(r=>r.json())
-  .then(d=>ipv6.textContent=d.ip)
-  .catch(()=>ipv6.textContent='Not supported');
-
-/* ISP + Connection detect */
-fetch('https://ipinfo.io/json')
-.then(r=>r.json())
-.then(d=>{
+  ip.textContent = d.ip;
   isp.textContent = d.org || '-';
-  const org=(d.org||'').toLowerCase();
 
-  let type='Wi-Fi';
-  if(org.includes('ais')||org.includes('true')||org.includes('dtac')||org.includes('mobile')){
-    type='Mobile (4G / 5G)';
+  if(ipv6 && ipv6.ip){
+    ipver.textContent = 'IPv6 + IPv4';
+  }else{
+    ipver.textContent = 'IPv4';
   }
-  conn.textContent=type;
 
-  saveHistory(type,d.ip);
-  loadHistory();
+  if(navigator.connection){
+    network.textContent =
+      'Online • ' + navigator.connection.effectiveType.toUpperCase();
+  }else{
+    network.textContent = 'Online';
+  }
+})
+.catch(()=>{
+  network.textContent = 'Unavailable';
 });
-
-/* History */
-function saveHistory(type,ip){
-  let h=JSON.parse(localStorage.getItem('netHistory')||'[]');
-  h.unshift({t:new Date().toLocaleString('th-TH'),type,ip});
-  h=h.slice(0,5);
-  localStorage.setItem('netHistory',JSON.stringify(h));
-}
-function loadHistory(){
-  const h=JSON.parse(localStorage.getItem('netHistory')||'[]');
-  history.innerHTML=h.map(i=>`• ${i.t}<br>${i.type} – ${i.ip}`).join('<br><br>');
-}
-function clearHistory(){
-  localStorage.removeItem('netHistory');
-  history.textContent='No data';
-}
-loadHistory();
 </script>
 
 </body>
