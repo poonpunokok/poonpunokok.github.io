@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Speed Test</title>
+
+<style>
+:root{
+--bg:#f2f2f7;--card:#fff;--primary:#2563eb;--secondary:#8e8e93;--text:#111827
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
+margin:0;font-family:-apple-system,BlinkMacSystemFont,system-ui;
+background:var(--bg);color:var(--text)
+}
+header{
+padding:env(safe-area-inset-top) 16px 16px;
+text-align:center;font-size:22px;font-weight:600
+}
+main{padding:16px;padding-bottom:100px}
+.card{
+background:var(--card);border-radius:20px;padding:20px;margin-bottom:16px;
+box-shadow:0 8px 24px rgba(0,0,0,.06)
+}
+button{
+width:100%;padding:16px;border-radius:16px;border:none;
+background:var(--primary);color:#fff;font-size:18px;font-weight:600
+}
+.result{
+margin-top:24px;font-size:36px;font-weight:700;text-align:center
+}
+nav{
+position:fixed;bottom:0;left:0;right:0;height:78px;
+padding-bottom:env(safe-area-inset-bottom);
+background:rgba(255,255,255,.92);
+backdrop-filter:blur(20px);
+display:flex;border-top:1px solid #e5e7eb
+}
+nav a{
+flex:1;text-align:center;padding-top:10px;
+text-decoration:none;color:var(--secondary);font-size:12px
+}
+nav a.active{color:var(--primary);font-weight:600}
+nav span{display:block;font-size:22px}
+</style>
+</head>
+
+<body>
+
+<header>Speed Test</header>
+
+<main>
+<div class="card">
+<button onclick="test()">เริ่มทดสอบ</button>
+<div id="out" class="result">—</div>
+<p style="text-align:center;color:#6b7280;font-size:14px">Mbps</p>
+</div>
+</main>
+
+<nav>
+<a href="index.html"><span>🏠</span>Home</a>
+<a href="speed.html" class="active"><span>📶</span>Speed</a>
+<a href="tools.html"><span>⚙️</span>Tools</a>
+</nav>
+
+<script>
+function test(){
+out.innerText="…";
+const s=performance.now(),i=new Image(),size=500000;
+i.onload=()=>{
+const t=(performance.now()-s)/1000;
+out.innerText=((size*8)/t/1024/1024).toFixed(2);
+};
+i.onerror=()=>out.innerText="Error";
+i.src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Fronalpstock_big.jpg?"+Math.random();
+}
+</script>
+
+</body>
+</html>
