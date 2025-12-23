@@ -41,6 +41,27 @@ main{
 padding-bottom:120px
 }
 
+/* ===== Status ===== */
+.status{
+margin:16px;
+padding:16px;
+background:var(--card);
+border-radius:14px
+}
+
+.status-row{
+display:flex;
+gap:10px;
+flex-wrap:wrap
+}
+
+.pill{
+background:#f2f2f7;
+padding:6px 12px;
+border-radius:999px;
+font-size:14px
+}
+
 /* ===== Section ===== */
 .section{
 margin-top:16px;
@@ -78,13 +99,9 @@ align-items:center;
 justify-content:center;
 font-size:18px;
 margin-right:14px;
-color:#fff
+color:#fff;
+background:#0a84ff
 }
-
-.blue{background:#0a84ff}
-.green{background:#34c759}
-.orange{background:#ff9f0a}
-.gray{background:#8e8e93}
 
 /* ===== Text ===== */
 .cell-title{
@@ -104,27 +121,6 @@ flex:1
 .chevron{
 color:var(--muted);
 font-size:18px
-}
-
-/* ===== Status ===== */
-.status{
-margin:16px;
-padding:16px;
-background:var(--card);
-border-radius:14px
-}
-
-.status-row{
-display:flex;
-gap:10px;
-flex-wrap:wrap
-}
-
-.pill{
-background:#f2f2f7;
-padding:6px 12px;
-border-radius:999px;
-font-size:14px
 }
 
 /* ===== Tab Bar ===== */
@@ -175,7 +171,7 @@ margin-bottom:2px
 <div class="status-row">
 <div class="pill" id="net">🌐 Checking</div>
 <div class="pill" id="time">⏱ --:--</div>
-<div class="pill">📱 iOS Style</div>
+<div class="pill">📱 iOS App</div>
 </div>
 </div>
 
@@ -183,37 +179,10 @@ margin-bottom:2px
 <div class="section">
 
 <a href="speed.html" class="cell">
-<div class="icon blue">📶</div>
+<div class="icon">📶</div>
 <div class="cell-text">
 <div class="cell-title">Speed Test</div>
 <div class="cell-sub">ทดสอบความเร็วอินเทอร์เน็ต</div>
-</div>
-<div class="chevron">›</div>
-</a>
-
-<div class="cell">
-<div class="icon green">📊</div>
-<div class="cell-text">
-<div class="cell-title">Dashboard</div>
-<div class="cell-sub">ภาพรวมอุปกรณ์</div>
-</div>
-<div class="chevron">›</div>
-</div>
-
-<div class="cell">
-<div class="icon orange">🔋</div>
-<div class="cell-text">
-<div class="cell-title">Battery Care</div>
-<div class="cell-sub">ดูแลสุขภาพแบตเตอรี่</div>
-</div>
-<div class="chevron">›</div>
-</div>
-
-<a href="tools.html" class="cell">
-<div class="icon gray">⚙️</div>
-<div class="cell-text">
-<div class="cell-title">System Tools</div>
-<div class="cell-sub">เครื่องมือระบบ</div>
 </div>
 <div class="chevron">›</div>
 </a>
@@ -226,7 +195,6 @@ margin-bottom:2px
 <nav>
 <a href="index.html" class="active"><span>🏠</span>Home</a>
 <a href="speed.html"><span>📶</span>Speed</a>
-<a href="tools.html"><span>⚙️</span>Tools</a>
 </nav>
 
 <script>
