@@ -10,10 +10,9 @@
 --bg:#f2f2f7;
 --card:#ffffff;
 --primary:#2563eb;
---secondary:#8e8e93;
 --text:#111827;
---soft:#f9fafb;
---shadow:0 12px 28px rgba(0,0,0,.08)
+--muted:#8e8e93;
+--shadow:0 20px 40px rgba(0,0,0,.12)
 }
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -27,122 +26,87 @@ color:var(--text)
 
 /* ===== Header ===== */
 header{
-padding:env(safe-area-inset-top) 20px 14px;
+padding:env(safe-area-inset-top) 20px 10px;
 font-size:26px;
-font-weight:700;
-letter-spacing:-.3px
+font-weight:700
 }
 
 /* ===== Layout ===== */
 main{
 padding:16px;
-padding-bottom:110px
+padding-bottom:130px
 }
 
-/* ===== Hero Card ===== */
-.hero{
-background:linear-gradient(135deg,#2563eb,#3b82f6);
-color:#fff;
-border-radius:26px;
-padding:22px;
-margin-bottom:18px;
-box-shadow:0 18px 40px rgba(37,99,235,.35)
-}
-
-.hero-title{
-font-size:20px;
-font-weight:600;
-opacity:.95
-}
-
-.hero-status{
-display:flex;
-gap:12px;
-margin-top:16px;
-flex-wrap:wrap
-}
-
-.pill{
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(10px);
-padding:8px 14px;
-border-radius:999px;
-font-size:14px;
-font-weight:500
-}
-
-/* ===== Card ===== */
-.card{
+/* ===== Main Menu ===== */
+.menu{
 background:var(--card);
-border-radius:22px;
-padding:20px;
-margin-bottom:18px;
+border-radius:28px;
+padding:22px;
 box-shadow:var(--shadow)
 }
 
-.card h3{
-margin:0 0 14px;
-font-size:18px
+.menu-title{
+font-size:18px;
+font-weight:600;
+margin-bottom:16px
 }
 
-/* ===== Menu Grid ===== */
-.grid{
+.menu-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:14px
+gap:16px
 }
 
-.tile{
-background:var(--soft);
-border-radius:20px;
+.app{
+background:linear-gradient(180deg,#f9fafb,#eef2ff);
+border-radius:22px;
 padding:20px;
-box-shadow:inset 0 0 0 1px #e5e7eb;
-transition:.15s;
 text-decoration:none;
-color:inherit
+color:inherit;
+box-shadow:inset 0 0 0 1px #e5e7eb;
+transition:.15s
 }
 
-.tile:active{
-transform:scale(.97);
-background:#eef2ff
+.app:active{
+transform:scale(.96)
 }
 
-.icon{
-font-size:28px;
+.app-icon{
+font-size:30px;
 margin-bottom:10px
 }
 
-.label{
+.app-name{
 font-weight:600
 }
 
-.sub{
+.app-desc{
 font-size:13px;
-color:var(--secondary);
+color:var(--muted);
 margin-top:4px
 }
 
-/* ===== Bottom Nav ===== */
+/* ===== Floating Tab Bar ===== */
 nav{
 position:fixed;
-bottom:0;
-left:0;
-right:0;
-height:82px;
-padding-bottom:env(safe-area-inset-bottom);
-background:rgba(255,255,255,.92);
+left:14px;
+right:14px;
+bottom:env(safe-area-inset-bottom);
+height:74px;
+background:rgba(255,255,255,.88);
 backdrop-filter:blur(20px);
+border-radius:28px;
 display:flex;
-border-top:1px solid #e5e7eb
+box-shadow:0 18px 40px rgba(0,0,0,.18)
 }
 
 nav a{
 flex:1;
 text-align:center;
-padding-top:10px;
 text-decoration:none;
-color:var(--secondary);
-font-size:12px
+color:var(--muted);
+font-size:12px;
+padding-top:8px
 }
 
 nav a.active{
@@ -152,8 +116,32 @@ font-weight:600
 
 nav span{
 display:block;
-font-size:22px;
+font-size:24px;
 margin-bottom:2px
+}
+
+/* ===== Status Card ===== */
+.status{
+margin-bottom:18px;
+background:linear-gradient(135deg,#2563eb,#3b82f6);
+color:#fff;
+border-radius:26px;
+padding:20px;
+box-shadow:0 18px 40px rgba(37,99,235,.35)
+}
+
+.status-row{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:14px
+}
+
+.pill{
+background:rgba(255,255,255,.2);
+padding:8px 14px;
+border-radius:999px;
+font-size:14px
 }
 </style>
 </head>
@@ -164,43 +152,44 @@ margin-bottom:2px
 
 <main>
 
-<!-- Hero -->
-<div class="hero">
-<div class="hero-title">ภาพรวมระบบ</div>
-<div class="hero-status">
+<!-- Status -->
+<div class="status">
+<div style="font-size:20px;font-weight:600">ภาพรวมระบบ</div>
+<div class="status-row">
 <div class="pill" id="net">🌐 Checking</div>
 <div class="pill" id="time">⏱ --:--</div>
-<div class="pill">📱 iOS Utility</div>
+<div class="pill">📱 iOS Style</div>
 </div>
 </div>
 
-<!-- Menu -->
-<div class="card">
-<h3>เมนูหลัก</h3>
-<div class="grid">
+<!-- Main Menu -->
+<div class="menu">
+<div class="menu-title">เมนูหลัก</div>
 
-<a href="speed.html" class="tile">
-<div class="icon">📶</div>
-<div class="label">Speed Test</div>
-<div class="sub">ทดสอบความเร็วเน็ต</div>
+<div class="menu-grid">
+
+<a href="speed.html" class="app">
+<div class="app-icon">📶</div>
+<div class="app-name">Speed Test</div>
+<div class="app-desc">ทดสอบความเร็วอินเทอร์เน็ต</div>
 </a>
 
-<div class="tile">
-<div class="icon">📊</div>
-<div class="label">Dashboard</div>
-<div class="sub">สถานะอุปกรณ์</div>
+<div class="app">
+<div class="app-icon">📊</div>
+<div class="app-name">Dashboard</div>
+<div class="app-desc">สถานะอุปกรณ์</div>
 </div>
 
-<div class="tile">
-<div class="icon">🔋</div>
-<div class="label">Battery Care</div>
-<div class="sub">ดูแลสุขภาพแบต</div>
+<div class="app">
+<div class="app-icon">🔋</div>
+<div class="app-name">Battery Care</div>
+<div class="app-desc">ดูแลสุขภาพแบตเตอรี่</div>
 </div>
 
-<a href="tools.html" class="tile">
-<div class="icon">⚙️</div>
-<div class="label">Tools</div>
-<div class="sub">เครื่องมือระบบ</div>
+<a href="tools.html" class="app">
+<div class="app-icon">⚙️</div>
+<div class="app-name">System Tools</div>
+<div class="app-desc">เครื่องมือระบบ</div>
 </a>
 
 </div>
@@ -208,19 +197,28 @@ margin-bottom:2px
 
 </main>
 
-<!-- Nav -->
+<!-- Bottom Tab -->
 <nav>
-<a href="index.html" class="active"><span>🏠</span>Home</a>
-<a href="speed.html"><span>📶</span>Speed</a>
-<a href="tools.html"><span>⚙️</span>Tools</a>
+<a href="index.html" class="active">
+<span>🏠</span>
+Home
+</a>
+<a href="speed.html">
+<span>📶</span>
+Speed
+</a>
+<a href="tools.html">
+<span>⚙️</span>
+Tools
+</a>
 </nav>
 
 <script>
-function clock(){
+function updateTime(){
 const n=new Date();
 time.innerText="⏱ "+n.toLocaleTimeString("th-TH",{hour:'2-digit',minute:'2-digit'});
 }
-setInterval(clock,1000);clock();
+setInterval(updateTime,1000);updateTime();
 net.innerText=navigator.onLine?"🌐 Online":"🌐 Offline";
 </script>
 
