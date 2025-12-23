@@ -2,34 +2,167 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Utility App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Utility App</title>
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2563eb">
+<style>
+:root {
+    --bg: #f2f2f7;
+    --card: #ffffff;
+    --primary: #2563eb;
+    --secondary: #8e8e93;
+    --text: #111827;
+}
 
-<link rel="stylesheet" href="css/style.css">
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Header */
+header {
+    padding: env(safe-area-inset-top) 16px 16px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* Main */
+main {
+    padding: 16px;
+    padding-bottom: 100px;
+}
+
+/* Card */
+.card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+/* Status Row */
+.status {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+/* Quick Actions */
+.actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.action {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 18px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Bottom Tab */
+nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 78px;
+    padding-bottom: env(safe-area-inset-bottom);
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(20px);
+    display: flex;
+    border-top: 1px solid #e5e7eb;
+}
+
+nav div {
+    flex: 1;
+    text-align: center;
+    padding-top: 10px;
+    color: var(--secondary);
+    font-size: 12px;
+}
+
+nav div.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+nav span {
+    display: block;
+    font-size: 22px;
+}
+</style>
 </head>
+
 <body>
 
-<header>My Utility App</header>
+<header>Utility App</header>
 
-<nav>
-    <a href="index.html" class="active">หน้าแรก</a>
-    <a href="speedtest.html">เทสเน็ต</a>
-    <a href="tools.html">เครื่องมือ</a>
-</nav>
+<main>
+    <div class="card">
+        <h3>สถานะระบบ</h3>
+        <div class="status">
+            <span>🌐 Network</span>
+            <span id="net">Checking…</span>
+        </div>
+        <div class="status">
+            <span>⏱ เวลา</span>
+            <span id="time">--:--</span>
+        </div>
+    </div>
 
-<main class="card">
-    <h2>ยินดีต้อนรับ</h2>
-    <p>เว็บนี้รองรับ PWA เพิ่มเป็นแอปบน iOS ได้</p>
+    <div class="card">
+        <h3>เมนูหลัก</h3>
+        <div class="actions">
+            <div class="action">📶 เทสเน็ต</div>
+            <div class="action">📊 Dashboard</div>
+            <div class="action">🔋 ดูแลแบต</div>
+            <div class="action">⚙️ เครื่องมือ</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>เกี่ยวกับแอพ</h3>
+        <p style="font-size:14px;color:#6b7280">
+            แอพส่วนตัวแบบ PWA  
+            ทำงานเหมือนแอพ iOS จริง
+        </p>
+    </div>
 </main>
 
-<script>
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-}
-</script>
+<nav>
+    <div class="active">
+        <span>🏠</span>
+        Home
+    </div>
+    <div>
+        <span>📶</span>
+        Speed
+    </div>
+    <div>
+        <span>⚙️</span>
+        Tools
+    </div>
+</nav>
 
-</body>
-</html>
+<script>
+// เวลา
+function updateTime() {
+    const now = new Da
