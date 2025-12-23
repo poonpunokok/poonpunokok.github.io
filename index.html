@@ -6,75 +6,115 @@
 <title>Speed Test</title>
 
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <style>
+:root{
+  --bg:#0a0f1f;
+  --ring:#1ddbd1;
+  --text:#ffffff;
+  --muted:#a5aac9;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  background:#0b1020;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  color:#fff;
+  min-height:100vh;
+  background:
+    radial-gradient(900px 500px at 50% -200px,#16214d,#0a0f1f 60%),
+    #0a0f1f;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+  color:var(--text);
 }
+
 .app{
   max-width:430px;
   margin:auto;
   padding:24px 16px 40px;
   text-align:center;
 }
+
+/* top bar */
 .top{
   display:flex;
   justify-content:center;
-  gap:24px;
-  font-size:14px;
-  color:#c7cbe3;
-  margin-bottom:40px;
+  gap:28px;
+  font-size:13px;
+  letter-spacing:.4px;
+  color:var(--muted);
+  margin-bottom:48px;
 }
+
+/* GO circle */
 .go-wrap{
   display:flex;
   justify-content:center;
-  margin-bottom:40px;
+  margin-bottom:44px;
 }
+
 .go-btn{
-  width:220px;
-  height:220px;
+  width:240px;
+  height:240px;
   border-radius:50%;
-  border:2px solid #1ddbd1;
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:42px;
+  font-size:44px;
   font-weight:500;
+  letter-spacing:2px;
   color:#fff;
-  background:radial-gradient(circle at center,#10162f,#0b1020);
+  background:
+    radial-gradient(circle at 30% 30%,#1b255a,#0a0f1f 70%);
+  box-shadow:
+    inset 0 0 0 2px rgba(29,219,209,.9),
+    0 0 60px rgba(29,219,209,.25),
+    0 30px 80px rgba(0,0,0,.6);
+  transition:transform .15s ease, box-shadow .15s ease;
 }
-.go-btn:active{opacity:.85}
 
+.go-btn:active{
+  transform:scale(.97);
+  box-shadow:
+    inset 0 0 0 2px rgba(29,219,209,1),
+    0 0 40px rgba(29,219,209,.35),
+    0 18px 50px rgba(0,0,0,.7);
+}
+
+/* info */
 .info{
   display:flex;
   justify-content:space-between;
-  align-items:center;
+  align-items:flex-start;
+  margin-top:12px;
   font-size:14px;
-  color:#c7cbe3;
+  color:var(--text);
 }
-.info span{
+
+.info small{
   display:block;
   margin-top:6px;
   font-size:13px;
-  color:#9aa0c8;
-}
-.link{
-  color:#1ddbd1;
-  margin-top:8px;
-  font-size:14px;
+  color:var(--muted);
 }
 
+.link{
+  margin-top:10px;
+  font-size:14px;
+  color:var(--ring);
+}
+
+/* speed iframe */
 iframe{
   width:100%;
-  height:360px;
+  height:380px;
   border:none;
-  border-radius:16px;
+  border-radius:20px;
+  margin-top:28px;
   display:none;
-  margin-top:24px;
+  background:#000;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
 }
 </style>
 </head>
@@ -82,7 +122,7 @@ iframe{
 <body>
 <div class="app">
 
-  <!-- Top -->
+  <!-- top -->
   <div class="top">
     <div>RESULTS</div>
     <div>SETTINGS</div>
@@ -93,36 +133,37 @@ iframe{
     <div class="go-btn" onclick="start()">GO</div>
   </div>
 
-  <!-- Info -->
+  <!-- info -->
   <div class="info">
     <div>
       AIS
-      <span id="ip">Loading…</span>
+      <small id="ip">—</small>
     </div>
-    <div>
+    <div style="text-align:right">
       AIS
-      <span id="loc">—</span>
+      <small id="loc">—</small>
       <div class="link">Change Server</div>
     </div>
   </div>
 
-  <!-- Speed -->
+  <!-- speed -->
   <iframe id="speed" src="https://openspeedtest.com/speedtest"></iframe>
 
 </div>
 
 <script>
 function start(){
-  speed.style.display='block';
+  speed.style.display = 'block';
 }
 
+/* network info */
 fetch('https://ipinfo.io/json')
   .then(r=>r.json())
   .then(d=>{
-    ip.textContent=d.ip;
-    loc.textContent=d.city || '';
+    ip.textContent = d.ip || '—';
+    loc.textContent = d.city ? d.city : '—';
   })
-  .catch(()=>ip.textContent='—');
+  .catch(()=>{});
 </script>
 
 </body>
