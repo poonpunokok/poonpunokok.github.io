@@ -4,19 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Dashboard</title>
+<title>Network Status</title>
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 <style>
 :root{
-  --bg:#0b0f19;
+  --bg:#020617;
   --card:rgba(255,255,255,0.06);
   --border:rgba(255,255,255,0.08);
   --text:#f9fafb;
   --muted:#9ca3af;
-  --accent:#60a5fa;
+  --accent:#3b82f6;
 }
 
 *{box-sizing:border-box}
@@ -30,15 +30,15 @@ body{
 .app{
   max-width:430px;
   margin:auto;
-  padding:20px 16px 32px;
+  padding:24px 16px 40px;
 }
 
 .header{
-  margin-bottom:20px;
+  margin-bottom:24px;
 }
 .header h1{
   margin:0;
-  font-size:26px;
+  font-size:28px;
   font-weight:600;
 }
 .header p{
@@ -50,74 +50,59 @@ body{
 .card{
   background:var(--card);
   border:1px solid var(--border);
-  border-radius:22px;
-  padding:18px;
-  margin-bottom:16px;
+  border-radius:24px;
+  padding:22px;
+  margin-bottom:20px;
   backdrop-filter:blur(20px);
 }
 
-.clock{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
 .time{
-  font-size:42px;
+  font-size:46px;
   font-weight:600;
 }
 .date{
+  margin-top:4px;
   font-size:14px;
   color:var(--muted);
-  text-align:right;
 }
 
-.section-title{
-  font-size:16px;
+/* IP */
+.ip-row{
   margin-bottom:12px;
 }
+.ip-label{
+  font-size:13px;
+  color:var(--muted);
+}
+.ip-value{
+  font-size:18px;
+  font-weight:600;
+  margin-top:2px;
+}
 
+/* Speed */
 .speed-btn{
   width:100%;
-  padding:18px;
-  border-radius:18px;
+  padding:20px;
+  border-radius:20px;
   border:none;
-  background:linear-gradient(135deg,#60a5fa,#3b82f6);
+  background:linear-gradient(135deg,#60a5fa,#2563eb);
   color:#020617;
   font-size:18px;
   font-weight:600;
 }
 
 .speed-box{
-  margin-top:14px;
+  margin-top:18px;
   overflow:hidden;
-  border-radius:16px;
+  border-radius:18px;
+  display:none;
 }
 
 iframe{
   width:100%;
-  height:340px;
+  height:360px;
   border:none;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-}
-
-.tile{
-  background:rgba(255,255,255,0.04);
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:18px 14px;
-  text-align:center;
-  font-size:15px;
-}
-.tile span{
-  display:block;
-  margin-top:6px;
-  font-size:12px;
-  color:var(--muted);
 }
 </style>
 </head>
@@ -127,57 +112,77 @@ iframe{
 
   <!-- Header -->
   <div class="header">
-    <h1>Dashboard</h1>
-    <p>Network & Tools</p>
+    <h1>Network Status</h1>
+    <p>Wi-Fi / 4G / 5G</p>
   </div>
 
   <!-- Clock -->
-  <div class="card clock">
-    <div>
-      <div class="time" id="time">00:00</div>
-      <div class="date" id="date">—</div>
+  <div class="card">
+    <div class="time" id="time">00:00</div>
+    <div class="date" id="date">—</div>
+  </div>
+
+  <!-- IP Status -->
+  <div class="card">
+    <div class="ip-row">
+      <div class="ip-label">Connection Type</div>
+      <div class="ip-value" id="conn">—</div>
+    </div>
+    <div class="ip-row">
+      <div class="ip-label">Public IP</div>
+      <div class="ip-value" id="ip">Loading…</div>
+    </div>
+    <div class="ip-row">
+      <div class="ip-label">ISP</div>
+      <div class="ip-value" id="isp">—</div>
     </div>
   </div>
 
   <!-- Speed Test -->
   <div class="card">
-    <div class="section-title">Internet Speed</div>
     <button class="speed-btn" onclick="toggleSpeed()">Run Speed Test</button>
-    <div class="speed-box" id="speed" style="display:none">
+    <div class="speed-box" id="speed">
       <iframe src="https://openspeedtest.com/speedtest"></iframe>
-    </div>
-  </div>
-
-  <!-- Tools -->
-  <div class="card">
-    <div class="section-title">Quick Access</div>
-    <div class="grid">
-      <div class="tile" onclick="go('https://192.168.1.1')">
-        Router
-        <span>Admin</span>
-      </div>
-      <div class="tile" onclick="go('https://ipinfo.io')">
-        IP Check
-        <span>Public IP</span>
-      </div>
-      <div class="tile" onclick="go('https://fast.com')">
-        Fast
-        <span>Netflix</span>
-      </div>
-      <div class="tile" onclick="go('https://google.com')">
-        Google
-        <span>Search</span>
-      </div>
     </div>
   </div>
 
 </div>
 
 <script>
+/* Clock */
 function updateClock(){
   const n=new Date();
   time.textContent=n.toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'});
   date.textContent=n.toLocaleDateString('th-TH',{weekday:'long',day:'numeric',month:'long'});
 }
 setInterval(updateClock,1000);
-update
+updateClock();
+
+/* Speed */
+function toggleSpeed(){
+  const s=document.getElementById('speed');
+  s.style.display = s.style.display === 'none' || s.style.display === '' ? 'block' : 'none';
+}
+
+/* Connection type */
+if(navigator.connection){
+  const type = navigator.connection.effectiveType;
+  conn.textContent = type.includes('4g') ? 'Mobile (4G/5G)' : 'Wi-Fi';
+}else{
+  conn.textContent = 'Unknown';
+}
+
+/* Public IP */
+fetch('https://ipinfo.io/json')
+  .then(r=>r.json())
+  .then(d=>{
+    ip.textContent = d.ip;
+    isp.textContent = d.org || '-';
+  })
+  .catch(()=>{
+    ip.textContent = 'Unavailable';
+  });
+</script>
+
+</body>
+</html>
