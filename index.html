@@ -3,101 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soil Moisture Monitoring System</title>
+<title>Advanced Soil Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1c1c1c);
+  background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#000000);
   background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  animation: gradientBG 15s ease infinite;
+  color: white;
 }
 
-/* Animated Gradient */
 @keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {background-position:0% 50%}
+  50% {background-position:100% 50%}
+  100% {background-position:0% 50%}
 }
 
-/* Header */
 .header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 15px 0;
   text-align: center;
-  background: rgba(0,0,0,0.3);
-  color: #ffffff;
-  font-size: 16px;
-  letter-spacing: 1px;
-}
-
-/* Glass Card */
-.container {
-  backdrop-filter: blur(14px);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255,255,255,0.2);
-  width: 430px;
-  padding: 35px;
-  border-radius: 16px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-  color: #ffffff;
-}
-
-h1 {
+  padding: 20px;
   font-size: 20px;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ffffff;
+  letter-spacing: 2px;
 }
 
-.time, .viewers {
-  text-align: center;
-  font-size: 14px;
-  color: #d0d8e0;
-  margin-bottom: 10px;
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
 }
 
+.card {
+  backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
+
+/* ===== Moisture Value Glow ===== */
 .value {
+  font-size: 60px;
   text-align: center;
-  font-size: 52px;
   font-weight: bold;
-  color: #ffffff;
+  text-shadow: 0 0 10px #00ffff,
+               0 0 20px #00ffff,
+               0 0 40px #0072ff;
 }
 
-.status {
-  text-align: center;
-  font-size: 16px;
-  margin: 15px 0;
-  color: #ffffff;
+/* ===== Circular Progress ===== */
+.circle-container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
 }
 
-.bar-container {
-  width: 100%;
-  height: 14px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 7px;
-  overflow: hidden;
+.circle-container svg {
+  transform: rotate(-90deg);
 }
 
-.bar-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  transition: width 0.4s linear;
+.circle-text {
+  position:absolute;
+  font-size:22px;
+  font-weight:bold;
 }
 
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: #d0d8e0;
-  margin-top: 18px;
+/* ===== Chart ===== */
+canvas {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 10px;
 }
 </style>
 </head>
@@ -105,105 +86,143 @@ h1 {
 <body>
 
 <div class="header">
-  REAL-TIME ENVIRONMENT MONITORING SYSTEM
+REAL-TIME SMART FARM DASHBOARD
 </div>
 
-<div class="container">
-  <h1>Soil Moisture Monitoring</h1>
+<div class="dashboard">
 
-  <div class="time" id="currentTime">--</div>
-  <div class="viewers" id="viewerCount">Online Viewers: 1</div>
+  <!-- Left Card -->
+  <div class="card">
+    <h2 style="text-align:center;">Soil Moisture</h2>
+    <div class="value" id="soilValue">--</div>
 
-  <div class="value" id="soilValue">--</div>
+    <div class="circle-container">
+      <svg width="150" height="150">
+        <circle cx="75" cy="75" r="65"
+          stroke="rgba(255,255,255,0.2)"
+          stroke-width="12"
+          fill="none"/>
+        <circle id="progressCircle"
+          cx="75" cy="75" r="65"
+          stroke="#00ffff"
+          stroke-width="12"
+          fill="none"
+          stroke-dasharray="408"
+          stroke-dashoffset="408"/>
+      </svg>
+      <div class="circle-text" id="percentText">0%</div>
+    </div>
 
-  <div class="status" id="statusText">Connecting...</div>
-
-  <div class="bar-container">
-    <div class="bar-fill" id="barFill"></div>
+    <p style="text-align:center;" id="statusText">Connecting...</p>
   </div>
 
-  <div class="footer">
-    Auto Refresh: 1 Second | Cloud Data Storage
+  <!-- Right Card -->
+  <div class="card">
+    <h2 style="text-align:center;">History Chart</h2>
+    <canvas id="historyChart"></canvas>
   </div>
+
 </div>
 
 <script>
-
 const binId = "6996e7a6d0ea881f40c67f49";
 const accessKey = "$2a$10$ta1AzT5NM3FCiT095fD2c./QPfPBJ8Licae.mm1Oaq9xAaT2I3RWC";
 
-/* CLOCK */
-function updateClock() {
-  const now = new Date();
-  const formatted = now.toLocaleString('th-TH');
-  document.getElementById("currentTime").innerText =
-    "Current Time: " + formatted;
-}
+let historyData = [];
+let historyLabels = [];
 
-/* VIEWER COUNTER */
-function updateViewerCount() {
-  let count = localStorage.getItem("viewerCount");
-  count = count ? parseInt(count) : 0;
-  count++;
-  localStorage.setItem("viewerCount", count);
-  document.getElementById("viewerCount").innerText =
-    "Online Viewers: " + count;
-}
-
-window.addEventListener("beforeunload", function() {
-  let count = localStorage.getItem("viewerCount");
-  count = count ? parseInt(count) : 1;
-  count = Math.max(0, count - 1);
-  localStorage.setItem("viewerCount", count);
+/* ===== Chart Setup ===== */
+const ctx = document.getElementById('historyChart');
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: historyLabels,
+    datasets: [{
+      label: 'Soil Value',
+      data: historyData,
+      borderColor: '#00ffff',
+      backgroundColor: 'rgba(0,255,255,0.2)',
+      tension: 0.3,
+      fill: true
+    }]
+  },
+  options: {
+    responsive:true,
+    scales: {
+      x: { ticks:{color:'white'} },
+      y: { ticks:{color:'white'} }
+    },
+    plugins:{
+      legend:{labels:{color:'white'}}
+    }
+  }
 });
 
-/* FETCH DATA */
-async function fetchData() {
-  try {
+/* ===== Fetch Data ===== */
+async function fetchData(){
+  try{
     const res = await fetch(
       `https://api.jsonbin.io/v3/b/${binId}/latest`,
-      {
-        headers: { "X-Access-Key": accessKey },
-        cache: "no-store"
-      }
+      { headers:{ "X-Access-Key": accessKey }, cache:"no-store"}
     );
-
     const data = await res.json();
     const soil = data.record.soil;
 
     document.getElementById("soilValue").innerText = soil;
 
-    let percent = mapValue(soil, 1500, 3500, 100, 0);
-    percent = Math.max(0, Math.min(100, percent));
+    let percent = mapValue(soil,1500,3500,100,0);
+    percent = Math.max(0,Math.min(100,percent));
 
-    document.getElementById("barFill").style.width = percent + "%";
+    updateCircle(percent);
+    updateStatus(soil);
 
-    if (soil > 2400) {
-      document.getElementById("statusText").innerText = "Status: Dry Soil";
-      document.getElementById("statusText").style.color = "#ff4d4d";
-    } else {
-      document.getElementById("statusText").innerText = "Status: Moist Soil";
-      document.getElementById("statusText").style.color = "#00ff99";
-    }
+    addHistory(soil);
 
-  } catch (error) {
-    document.getElementById("statusText").innerText = "Connection Error";
-    document.getElementById("statusText").style.color = "#ffa500";
+  }catch(e){
+    document.getElementById("statusText").innerText="Connection Error";
   }
 }
 
-function mapValue(x, in_min, in_max, out_min, out_max) {
-  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+/* ===== Functions ===== */
+function mapValue(x,in_min,in_max,out_min,out_max){
+  return (x-in_min)*(out_max-out_min)/(in_max-in_min)+out_min;
 }
 
-/* START */
-updateClock();
-setInterval(updateClock, 1000);
+function updateCircle(percent){
+  const circle = document.getElementById("progressCircle");
+  const circumference = 408;
+  const offset = circumference - (percent/100)*circumference;
+  circle.style.strokeDashoffset = offset;
+  document.getElementById("percentText").innerText =
+    percent.toFixed(0) + "%";
+}
 
-updateViewerCount();
+function updateStatus(soil){
+  const status = document.getElementById("statusText");
+  if(soil>2400){
+    status.innerText="Status: Dry Soil";
+    status.style.color="#ff4d4d";
+  }else{
+    status.innerText="Status: Moist Soil";
+    status.style.color="#00ff99";
+  }
+}
 
+function addHistory(value){
+  const now = new Date().toLocaleTimeString();
+  historyLabels.push(now);
+  historyData.push(value);
+
+  if(historyData.length>20){
+    historyData.shift();
+    historyLabels.shift();
+  }
+  chart.update();
+}
+
+/* ===== Start ===== */
 fetchData();
-setInterval(fetchData, 1000);
+setInterval(fetchData,2000);
 
 </script>
 
