@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Soil Monitor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Soil Monitor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #f2f2f2;
-    }
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #f2f2f2;
+}
 
-    .card {
-      margin-top: 80px;
-      padding: 30px;
-      background: white;
-      width: 320px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 20px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
+.card {
+  margin-top: 80px;
+  padding: 30px;
+  background: white;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
 
-    .value {
-      font-size: 45px;
-      font-weight: bold;
-    }
-  </style>
+.value {
+  font-size: 45px;
+  font-weight: bold;
+}
+</style>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 <script>
 
 const binId = "6996e38cae596e708f36dbbb";
-const apiKey = "$2a$10$ZEKXJJd70dw3QmDMylvANuJN0PjzTKho.8HhEmtJuQ3x1EzpwgByG";  
+const apiKey = "$2a$10$hwdUXVGf5F9vY/3qoHvh0uJcCYb8QUVX8AjULRM6GZd7E3dgOqNGO";   // ใช้ Access Key (อ่านอย่างเดียว)
 
 function fetchData() {
   fetch("https://api.jsonbin.io/v3/b/" + binId + "/latest", {
