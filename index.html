@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <title>Soil Monitor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
   font-family: Arial;
   text-align: center;
   background: #f2f2f2;
 }
+
 .card {
   margin-top: 80px;
   padding: 30px;
@@ -19,10 +21,15 @@ body {
   border-radius: 20px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
+
 .value {
   font-size: 45px;
   font-weight: bold;
   margin: 20px 0;
+}
+
+.status {
+  font-size: 18px;
 }
 </style>
 </head>
@@ -32,22 +39,34 @@ body {
 <div class="card">
   <h2>🌱 Soil Moisture Monitor</h2>
   <div id="soilValue" class="value">Loading...</div>
-  <div id="status"></div>
+  <div id="status" class="status"></div>
 </div>
 
 <script>
 
-const binId = "6996e7a6d0ea881f40c67f49";
-const accessKey = "$2a$10$lSUFrhkhRxO7BaHsUNduxOxPk50Bjw6.UdQawXQXg9CspyQeB3nM2";
+const binId = "6996e7a6d0ea881f40c67f49";   // ใส่ Bin ID ของคุณ
+const accessKey = "$2a$10$ta1AzT5NM3FCiT095fD2c./QPfPBJ8Licae.mm1Oaq9xAaT2I3RWC";     // ต้องเป็น Access Key (Read Only)
 
 function fetchData() {
   fetch("https://api.jsonbin.io/v3/b/" + binId + "/latest", {
+    method: "GET",
     headers: {
       "X-Access-Key": accessKey
     }
   })
-  .then(res => res.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+    return response.json();
+  })
   .then(data => {
+
+    console.log("JSON:", data); // ดูข้อมูลจริงใน Console
+
+    if (!data.record || data.record.soil === undefined) {
+      throw new Error("Invalid JSON structure");
+    }
 
     let soil = data.record.soil;
 
@@ -62,9 +81,10 @@ function fetchData() {
     }
 
   })
-  .catch(err => {
+  .catch(error => {
+    console.log("Fetch error:", error);
     document.getElementById("soilValue").innerText = "Error";
-    console.log(err);
+    document.getElementById("status").innerText = "";
   });
 }
 
