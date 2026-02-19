@@ -1,5 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Soil Monitor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #f2f2f2;
+    }
+
+    .card {
+      margin-top: 80px;
+      padding: 30px;
+      background: white;
+      width: 320px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .value {
+      font-size: 45px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>🌱 Soil Moisture Monitor</h2>
+  <div id="soilValue" class="value">Loading...</div>
+  <div id="status"></div>
+</div>
+
+<script>
+
 const binId = "6996e38cae596e708f36dbbb";
-const apiKey = "$2a$10$lSUFrhkhRxO7BaHsUNduxOxPk50Bjw6.UdQawXQXg9CspyQeB3nM2"; // หรือ Master Key ถ้ายังไม่มี Access Key
+const apiKey = "$2a$10$ZEKXJJd70dw3QmDMylvANuJN0PjzTKho.8HhEmtJuQ3x1EzpwgByG";  
 
 function fetchData() {
   fetch("https://api.jsonbin.io/v3/b/" + binId + "/latest", {
@@ -26,3 +68,8 @@ function fetchData() {
 
 fetchData();
 setInterval(fetchData, 5000);
+
+</script>
+
+</body>
+</html>
