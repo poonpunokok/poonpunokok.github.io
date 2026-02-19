@@ -6,6 +6,7 @@
 <title>Advanced Soil Dashboard</title>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
 
 <style>
 body {
@@ -26,8 +27,16 @@ body {
 .header {
   text-align: center;
   padding: 20px;
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 2px;
+}
+
+.top-bar {
+  display:flex;
+  justify-content:space-between;
+  padding: 0 30px;
+  font-size:14px;
+  margin-bottom:10px;
 }
 
 .dashboard {
@@ -46,7 +55,6 @@ body {
   box-shadow: 0 8px 40px rgba(0,0,0,0.4);
 }
 
-/* ===== Moisture Value Glow ===== */
 .value {
   font-size: 60px;
   text-align: center;
@@ -56,12 +64,12 @@ body {
                0 0 40px #0072ff;
 }
 
-/* ===== Circular Progress ===== */
 .circle-container {
   display:flex;
   justify-content:center;
   align-items:center;
   position:relative;
+  margin-bottom:20px;
 }
 
 .circle-container svg {
@@ -74,8 +82,13 @@ body {
   font-weight:bold;
 }
 
-/* ===== Chart ===== */
+.chart-wrapper {
+  overflow-x: auto;
+  height: 350px;
+}
+
 canvas {
+  min-width: 1400px;
   background: rgba(255,255,255,0.05);
   border-radius: 12px;
   padding: 10px;
@@ -89,9 +102,13 @@ canvas {
 REAL-TIME SMART FARM DASHBOARD
 </div>
 
+<div class="top-bar">
+  <div id="clock">Time: --</div>
+  <div id="viewerCount">Online Now: --</div>
+</div>
+
 <div class="dashboard">
 
-  <!-- Left Card -->
   <div class="card">
     <h2 style="text-align:center;">Soil Moisture</h2>
     <div class="value" id="soilValue">--</div>
@@ -116,10 +133,11 @@ REAL-TIME SMART FARM DASHBOARD
     <p style="text-align:center;" id="statusText">Connecting...</p>
   </div>
 
-  <!-- Right Card -->
   <div class="card">
     <h2 style="text-align:center;">History Chart</h2>
-    <canvas id="historyChart"></canvas>
+    <div class="chart-wrapper">
+      <canvas id="historyChart"></canvas>
+    </div>
   </div>
 
 </div>
@@ -131,34 +149,28 @@ const accessKey = "$2a$10$ta1AzT5NM3FCiT095fD2c./QPfPBJ8Licae.mm1Oaq9xAaT2I3RWC"
 let historyData = [];
 let historyLabels = [];
 
-/* ===== Chart Setup ===== */
-const ctx = document.getElementById('historyChart');
-const chart = new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: historyLabels,
-    datasets: [{
-      label: 'Soil Value',
-      data: historyData,
-      borderColor: '#00ffff',
-      backgroundColor: 'rgba(0,255,255,0.2)',
-      tension: 0.3,
-      fill: true
-    }]
-  },
-  options: {
-    responsive:true,
-    scales: {
-      x: { ticks:{color:'white'} },
-      y: { ticks:{color:'white'} }
-    },
-    plugins:{
-      legend:{labels:{color:'white'}}
-    }
-  }
-});
+/* ===== ทุกระบบรัน 10 วินาที ===== */
+function updateAll(){
 
-/* ===== Fetch Data ===== */
+  // เวลา
+  const now = new Date();
+  document.getElementById("clock").innerText =
+    "Time: " + now.toLocaleString("th-TH");
+
+  // Viewer (จำลอง)
+  let viewers = localStorage.getItem("dashboardViewers");
+  viewers = viewers ? parseInt(viewers) : 5;
+  viewers += Math.floor(Math.random()*3) - 1;
+  viewers = Math.max(1, viewers);
+  localStorage.setItem("dashboardViewers", viewers);
+
+  document.getElementById("viewerCount").innerText =
+    "Online Now: " + viewers;
+
+  // ดึงข้อมูลเซนเซอร์
+  fetchData();
+}
+
 async function fetchData(){
   try{
     const res = await fetch(
@@ -175,7 +187,6 @@ async function fetchData(){
 
     updateCircle(percent);
     updateStatus(soil);
-
     addHistory(soil);
 
   }catch(e){
@@ -183,7 +194,6 @@ async function fetchData(){
   }
 }
 
-/* ===== Functions ===== */
 function mapValue(x,in_min,in_max,out_min,out_max){
   return (x-in_min)*(out_max-out_min)/(in_max-in_min)+out_min;
 }
@@ -213,16 +223,53 @@ function addHistory(value){
   historyLabels.push(now);
   historyData.push(value);
 
-  if(historyData.length>20){
+  if(historyData.length>200){
     historyData.shift();
     historyLabels.shift();
   }
   chart.update();
 }
 
-/* ===== Start ===== */
-fetchData();
-setInterval(fetchData,2000);
+/* Chart Setup */
+const ctx = document.getElementById('historyChart');
+const chart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: historyLabels,
+    datasets: [{
+      label: 'Soil Value',
+      data: historyData,
+      borderColor: '#00ffff',
+      backgroundColor: 'rgba(0,255,255,0.2)',
+      tension: 0.3,
+      fill: true,
+      pointRadius: 2
+    }]
+  },
+  options: {
+    responsive:true,
+    maintainAspectRatio:false,
+    scales: {
+      x: { ticks:{color:'white'} },
+      y: { ticks:{color:'white'} }
+    },
+    plugins:{
+      legend:{labels:{color:'white'}},
+      zoom: {
+        pan: { enabled: true, mode: 'x' },
+        zoom: {
+          wheel: { enabled: true },
+          pinch: { enabled: true },
+          mode: 'x'
+        }
+      }
+    }
+  }
+});
+
+/* เริ่มทำงาน */
+updateAll();
+setInterval(updateAll,10000);
 
 </script>
 
