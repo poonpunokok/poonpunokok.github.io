@@ -26,6 +26,11 @@ body {
 .value {
   font-size: 45px;
   font-weight: bold;
+  margin: 20px 0;
+}
+
+.status {
+  font-size: 18px;
 }
 </style>
 </head>
@@ -35,22 +40,32 @@ body {
 <div class="card">
   <h2>🌱 Soil Moisture Monitor</h2>
   <div id="soilValue" class="value">Loading...</div>
-  <div id="status"></div>
+  <div id="status" class="status"></div>
 </div>
 
 <script>
 
-const binId = "6996e7a6d0ea881f40c67f49";
-const apiKey = "$2a$10$hwdUXVGf5F9vY/3qoHvh0uJcCYb8QUVX8AjULRM6GZd7E3dgOqNGO";   // ใช้ Access Key (อ่านอย่างเดียว)
+const binId = "6996e7a6d0ea881f40c67f49";   // ใส่ Bin ID ของคุณ
+const apiKey = "$2a$10$hwdUXVGf5F9vY/3qoHvh0uJcCYb8QUVX8AjULRM6GZd7E3dgOqNGO";  // ต้องเป็น Access Key (Read)
 
 function fetchData() {
   fetch("https://api.jsonbin.io/v3/b/" + binId + "/latest", {
+    method: "GET",
     headers: {
-      "X-Master-Key": apiKey
+      "X-Access-Key": apiKey
     }
   })
-  .then(res => res.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+    return response.json();
+  })
   .then(data => {
+
+    if (!data.record || data.record.soil === undefined) {
+      throw new Error("JSON format incorrect");
+    }
 
     let soil = data.record.soil;
 
@@ -63,6 +78,10 @@ function fetchData() {
       document.getElementById("status").innerHTML =
         "<span style='color:green;'>ดินชื้น ✅</span>";
     }
+  })
+  .catch(error => {
+    document.getElementById("soilValue").innerText = "Error";
+    console.log("Error:", error);
   });
 }
 
