@@ -1,95 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
 <meta charset="UTF-8">
-<title>Soil Monitor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soil Moisture Monitoring System</title>
 
 <style>
 body {
-  font-family: Arial;
-  text-align: center;
-  background: #f2f2f2;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.card {
-  margin-top: 80px;
-  padding: 30px;
-  background: white;
-  width: 320px;
-  margin: auto;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+.container {
+  background: #ffffff;
+  width: 420px;
+  padding: 35px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2c3e50;
 }
 
 .value {
-  font-size: 45px;
+  text-align: center;
+  font-size: 48px;
   font-weight: bold;
-  margin: 20px 0;
+  color: #2c3e50;
 }
 
 .status {
-  font-size: 18px;
+  text-align: center;
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.bar-container {
+  width: 100%;
+  height: 12px;
+  background: #e0e6ed;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0%;
+  background: #3498db;
+  transition: width 0.4s linear;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #95a5a6;
+  margin-top: 15px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
-  <h2>🌱 Soil Moisture Monitor</h2>
-  <div id="soilValue" class="value">Loading...</div>
-  <div id="status" class="status"></div>
+<div class="container">
+  <h1>Soil Moisture Monitoring System</h1>
+  <div class="value" id="soilValue">--</div>
+  <div class="status" id="statusText">Connecting...</div>
+
+  <div class="bar-container">
+    <div class="bar-fill" id="barFill"></div>
+  </div>
+
+  <div class="footer">
+    Real-time update (1 second interval)
+  </div>
 </div>
 
 <script>
 
-const binId = "6996e7a6d0ea881f40c67f49";   // ใส่ Bin ID ของคุณ
-const accessKey = "$2a$10$ta1AzT5NM3FCiT095fD2c./QPfPBJ8Licae.mm1Oaq9xAaT2I3RWC";     // ต้องเป็น Access Key (Read Only)
+const binId = "6996e7a6d0ea881f40c67f49";
+const accessKey = "$2a$10$ta1AzT5NM3FCiT095fD2c./QPfPBJ8Licae.mm1Oaq9xAaT2I3RWC";
 
-function fetchData() {
-  fetch("https://api.jsonbin.io/v3/b/" + binId + "/latest", {
-    method: "GET",
-    headers: {
-      "X-Access-Key": accessKey
-    }
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("HTTP " + response.status);
-    }
-    return response.json();
-  })
-  .then(data => {
+async function fetchData() {
+  try {
 
-    console.log("JSON:", data); // ดูข้อมูลจริงใน Console
+    const res = await fetch(
+      `https://api.jsonbin.io/v3/b/${binId}/latest`,
+      {
+        headers: { "X-Access-Key": accessKey },
+        cache: "no-store"   // 🔥 กันข้อมูลค้าง
+      }
+    );
 
-    if (!data.record || data.record.soil === undefined) {
-      throw new Error("Invalid JSON structure");
-    }
-
-    let soil = data.record.soil;
+    const data = await res.json();
+    const soil = data.record.soil;
 
     document.getElementById("soilValue").innerText = soil;
 
+    let percent = mapValue(soil, 1500, 3500, 100, 0);
+    percent = Math.max(0, Math.min(100, percent));
+
+    document.getElementById("barFill").style.width = percent + "%";
+
     if (soil > 2400) {
-      document.getElementById("status").innerHTML =
-        "<span style='color:red;'>ดินแห้ง 💧</span>";
+      document.getElementById("statusText").innerText = "Status: Dry Soil";
+      document.getElementById("statusText").style.color = "#c0392b";
     } else {
-      document.getElementById("status").innerHTML =
-        "<span style='color:green;'>ดินชื้น ✅</span>";
+      document.getElementById("statusText").innerText = "Status: Moist Soil";
+      document.getElementById("statusText").style.color = "#27ae60";
     }
 
-  })
-  .catch(error => {
-    console.log("Fetch error:", error);
-    document.getElementById("soilValue").innerText = "Error";
-    document.getElementById("status").innerText = "";
-  });
+  } catch (error) {
+    document.getElementById("statusText").innerText = "Connection Error";
+    document.getElementById("statusText").style.color = "#e67e22";
+  }
+}
+
+function mapValue(x, in_min, in_max, out_min, out_max) {
+  return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
 fetchData();
-setInterval(fetchData, 5000);
+setInterval(fetchData, 1000);  // 🔥 รีทุก 1 วิ
 
 </script>
 
