@@ -1,65 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Soil Monitor</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #f4f7f9;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      margin: 50px auto;
-      width: 300px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    .value {
-      font-size: 40px;
-      font-weight: bold;
-    }
-    .dry {
-      color: red;
-    }
-    .wet {
-      color: green;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="card">
-  <h2>🌱 Soil Moisture</h2>
-  <div id="value" class="value">Loading...</div>
-  <div id="status"></div>
-</div>
-
-<script>
-const apiURL = "วางURLAppsScriptของคุณ";
+const binId = "6996e38cae596e708f36dbbb";
+const apiKey = "$2a$10$lSUFrhkhRxO7BaHsUNduxOxPk50Bjw6.UdQawXQXg9CspyQeB3nM2"; // หรือ Master Key ถ้ายังไม่มี Access Key
 
 function fetchData() {
-  fetch(apiURL)
-    .then(response => response.json())
-    .then(data => {
-      let soil = data.soil;
-      document.getElementById("value").innerText = soil;
+  fetch("https://api.jsonbin.io/v3/b/" + binId + "/latest", {
+    headers: {
+      "X-Master-Key": apiKey
+    }
+  })
+  .then(res => res.json())
+  .then(data => {
 
-      if (soil > 2400) {
-        document.getElementById("status").innerHTML = "<span class='dry'>ดินแห้ง 💧</span>";
-      } else {
-        document.getElementById("status").innerHTML = "<span class='wet'>ดินชื้น ✅</span>";
-      }
-    });
+    let soil = data.record.soil;
+
+    document.getElementById("soilValue").innerText = soil;
+
+    if (soil > 2400) {
+      document.getElementById("status").innerHTML =
+        "<span style='color:red;'>ดินแห้ง 💧</span>";
+    } else {
+      document.getElementById("status").innerHTML =
+        "<span style='color:green;'>ดินชื้น ✅</span>";
+    }
+  });
 }
 
 fetchData();
 setInterval(fetchData, 5000);
-</script>
-
-</body>
-</html>
